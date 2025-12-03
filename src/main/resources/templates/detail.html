@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/layout">
+<head>
+	<title>YZ Tour : 고객게시판</title>
+</head>
+<th:block layout:fragment="content">
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2 style="margin:0">고객게시판</h2>
+						</header><br/>
+								<!-- Contents -->
+						<div class="col-8 col-12-medium imp-medium" >
+						<blockquote style="padding:0; margin-left: 10em;"><h4>　고객게시판 > 작성한 글</h4></blockquote><br/>
+							<section>
+								<!--<form th:action="/board" method="post">-->
+									<div class="row gtr-uniform gtr-50" style="margin-left:12em; width:1400px;">
+										<form id="delOk" th:action="@{/board/delete}" method="post">
+											<input type="hidden" id="boardId" name="boardId" th:value="${boardVO.boardId}"/>
+										</form>
+										<section>
+											<div class="table-wrapper">
+												<table class="alt" style="width:820px;">
+													<tbody>
+														<tr>
+															<td style="background:#322f30;text-align:center;">카테고리</td>
+															<td style="background:#2d2f32;" th:text="${detail.category}"></td>
+															<td style="background:#322f30;text-align:center;" >작성자</td>
+															<td style="background:#2d2f32;" th:text="${detail.name}"></td>
+															<td colspan="2" style="background:#322f30;text-align:center;" >등록일</td>
+															<td style="background:#2d2f32;" th:text="${#dates.format(detail.regdate,'yyyy-MM-dd')}"></td>
+														</tr>
+														<tr>
+															<td style="background:#322f30;text-align:center;">첨부파일</td>
+															<td colspan="3" style="background:#2d2f32;" th:each="file : ${detail.fileList}" >
+																<div th:if="${file.fileId!=null}">
+																	<a th:href="@{'/download/' + ${file.fileId}}">
+																		<strong th:text="${file.fileOriginName}"></strong>
+																	</a>
+																	<span style="font-size:0.9em;" th:text="' ,  size : ' + ${file.size} + 'kb'"></span>
+																</div>
+															</td>
+															<td colspan="2" style="background:#322f30;text-align:center;" >조회수</td>
+															<td style="background:#2d2f32;" th:text="${detail.hit}"></td>
+														</tr>
+														<tr>
+															<td style="background:#322f30;text-align:center;">제목</td>
+															<td colspan="6" style="text-align:center;background:#2d2f32;" th:text="${detail.title}"></td>
+														</tr>
+														<tr>
+															<td style="background:#322f30;text-align:center;">내용</td>
+															<td colspan="6" style="text-align:center;height:20em;background:#2d2f32;" th:text="${detail.content}"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</section>
+										<div class="col-6 col-12-medium">
+											<input type="checkbox" id="pub" name="pub" th:checked="${detail.pubYn}=='N'">
+											<label for="pub">비공개</label>
+										</div><br/><br/><br/><br/>
+
+										<div class="col-12">
+											<ul class="actions" style="margin-left:10em;">
+												<li><a th:href="@{/board/update(boardId=${boardVO.boardId})}" class="button primary small">수정</a></li>
+												<li><input type="submit" value="삭제" class="button primary small" th:onclick="delOk()"/></li>
+												<li><a href="/board" class="button small">목록</a></li>
+											</ul>
+										</div>
+									</div>
+								<!--</form>-->
+							</section>
+							<hr style="height:3px;background:#ccc;width:80%;margin-left:9em;"/><br/>
+							<section style="width:70%;margin-left:12em;">
+								<form action="/board/detail" method="post">
+									<textarea placeholder="댓글을 달아주세요" id="comment" name="comment" maxlength="150" style="height: 150px; resize:none;"></textarea><br/>
+									<input type="submit" class="button small" name="comment" value="작성" style="float:right;"/>
+								</form><br/>
+
+								<h3># 댓글 #</h3>
+								<ul class="alt">
+									<li>앗싸 1빠!!ㅋㅋㅋㅋㅋㅋㅋ       ㅣ 2022/12/02/01:31</li>
+									<li>아 빨리 포폴완성하고싶다       ㅣ 2022/12/02/01:31</li>
+									<li>혼자서 다하려니 빡세구나..       ㅣ 2022/12/02/01:31</li>
+									<li>파이팅 포기하지말자       ㅣ 2022/12/02/01:31</li>
+									<li>취업고고씽~~~~~~~~~~!!!       ㅣ 2022/12/02/01:31</li>
+								</ul>
+							</section><br/>
+
+							<hr style="width:80%;margin-left:9em;"/>
+							<table class="table border-top-default" style="width:70%;margin-left:12em;">
+							<tbody>
+							<tr>
+								<th>▲ 다음글</th>
+								<td colspan="3">
+									<a th:if="${next != null}" th:href="@{/board/detail(boardId=${next.boardId})}" th:text="${next.title}"></a>
+									<span th:if="${next == null}" th:text="'다음글이 없습니다.'"></span>
+								</td>
+							</tr>
+							<tr>
+								<th>▼ 이전글</th>
+								<td colspan="3">
+									<a th:if="${prev != null}" th:href="@{/board/detail(boardId=${prev.boardId})}" th:text="${prev.title}"></a>
+									<span th:if="${prev == null}" th:text="'이전글이 없습니다.'"></span>
+								</td>
+							</tr>
+							</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+
+			<th:block layout:fragment="script">
+			<script th:inline="javascript">
+				function delOk(){
+					 if ( !confirm('게시글을 삭제하시겠습니까?') ) {
+						return false;
+					 }
+
+					  document.getElementById('delOk').submit();
+				}
+			</script>
+			</th:block>
+
+		</div>
+	</body>
+</th:block>
+</html>

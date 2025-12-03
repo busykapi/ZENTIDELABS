@@ -1,0 +1,21 @@
+#-----------------------------------------------------------------------
+# 기본 설정
+#-----------------------------------------------------------------------
+server:
+  port: 8090
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  #### DB INFO
+  #-----------------------------------------------------------------------
+  # API LOG - MYSQL(로컬)
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3307/yzt?&serverTimezone=Asia/Seoul
+    username: yzt
+    password: yzt1234
+    mapper-locations: classpath:/mapper/**/*.xml
+
+
+

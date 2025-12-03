@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zentidelabs.web.mapper.BoardMapper">
+
+    <select id="getSearchList" parameterType="BoardVO" resultType="BoardVO">
+        SELECT    B.BOARD_ID
+                , B.TITLE
+                , B.CONTENT
+                , M.NAME
+                , B.REGDATE
+                , B.HIT
+                , B.PUB_YN
+                , B.CATEGORY
+                , B.MEMBER_ID
+                , B.FILE_ID
+        FROM BOARD B JOIN MEMBER M
+        ON B.MEMBER_ID = M.MEMBER_ID
+        <where>
+            PUB_YN = 'Y' AND DELETE_YN = 'N'
+            <if test= "searchCondition eq 'title'">
+                AND TITLE LIKE CONCAT('%', #{searchKeyword}, '%')
+            </if>
+            <if test="searchCondition eq 'memberId'" >
+                AND MEMBER_ID LIKE CONCAT('%', #{searchKeyword}, '%')
+            </if>
+        </where>
+        ORDER BY REGDATE DESC
+        LIMIT #{limit} OFFSET #{offset};
+    </select>
+
+
+    <select id="getDetail" parameterType="BoardVO" resultType="BoardVO">
+        SELECT  B.BOARD_ID
+                , B.TITLE
+                , B.CONTENT
+                , B.REGDATE
+                , M.NAME
+                , B.HIT
+                , B.PUB_YN
+                , B.CATEGORY
+                , B.MEMBER_ID
+                , B.FILE_ID
+        FROM BOARD B JOIN MEMBER M
+        ON B.MEMBER_ID = M.MEMBER_ID
+        WHERE
+            B.PUB_YN = 'Y' AND B.BOARD_ID = #{boardId};
+    </select>
+
+
+    <insert id="boardInsert" parameterType="BoardVO">
+        INSERT INTO BOARD(TITLE, CONTENT, CATEGORY, MEMBER_ID)
+        VALUES
+        (#{title}, #{content}, #{category}, #{memberId});
+    </insert>
+
+    <select id="getFileList" parameterType="BoardVO" resultType="FileVO">
+        SELECT
+          FILE_ID
+        , FILE_ORDER
+        , FILE_ORIGINNAME
+        , SIZE
+        FROM FILE
+        WHERE FILE_ID = #{fileId};
+    </select>
+
+
+    <!--수정-->
+    <update id="update" parameterType="BoardVO">
+        UPDATE BOARD
+        SET
+            <if test="TITLE != NULL"> TITLE = #{title}</if>
+            <if test="CONTENT != NULL"> CONTENT = #{content}</if>
+            <if test="CATEGORY != NULL"> CATEGORY = #{category}</if>
+            <if test="FILEID != NULL"> FILEID = #{file_id}</if>
+            <if test="PUBYN != NULL"> PUBYN = #{pub_yn}</if>
+        WHERE ID = #{boardId};
+    </update>
+
+
+    <!--삭제-->
+
+    <update id="delete" parameterType="BoardVO">
+        UPDATE BOARD
+        SET DELETE_YN = 'Y'
+        WHERE BOARD_ID = #{boardId};
+    </update>
+
+    <!--일괄삭제-->
+<!--
+    <delete id="deleteAll">
+        DELETE FROM BOARD
+        WHERE ID IN #{id}
+    </delete>
+-->
+
+    <!--페이징처리(전체페이지수)-->
+    <select id="totalCount" parameterType="BoardVO" resultType="int">
+        SELECT COUNT(*)
+        FROM BOARD
+        <where>
+            PUB_YN = 'Y' AND DELETE_YN = 'N'
+            <if test="searchCondition eq 'title'">
+                AND TITLE LIKE CONCAT('%', #{searchKeyword}, '%')
+            </if>
+            <if test="searchCondition eq 'memberId'" >
+                AND MEMBER_ID LIKE CONCAT('%', #{searchKeyword}, '%')
+            </if>
+        </where>
+    </select>
+
+
+    <!--다음글-->
+
+    <select id="getNext" parameterType="BoardVO" resultType="BoardVO">
+        SELECT BOARD_ID, TITLE FROM BOARD
+        WHERE BOARD_ID &gt; #{boardId}
+        LIMIT 1;
+    </select>
+
+
+    <!--이전글-->
+
+    <select id="getPrev"  parameterType="BoardVO" resultType="BoardVO">
+        SELECT BOARD_ID, TITLE FROM BOARD
+        WHERE BOARD_ID &lt; #{boardId}
+        ORDER BY REGDATE DESC
+        LIMIT 1;
+    </select>
+
+
+    <!--공개-->
+<!--
+    <update id="">
+
+    </update>
+-->
+
+    <!--일괄공개-->
+<!--
+    <update id="updatePubAll">
+        UPDATE BOARD
+        SET PUB = #{PUB}
+        WHERE ID IN
+        <foreach item="id" index="index" collection="ids"
+                 open="(" separator="," close=")" >
+        #{ID}
+        </foreach>
+    </update>
+-->
+
+
+</mapper>

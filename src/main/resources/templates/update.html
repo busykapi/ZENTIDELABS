@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layout/layout" xmlns="http://www.w3.org/1999/html">
+	<head>
+		<title>YZ Tour : 글쓰기</title>
+	</head>
+<th:block layout:fragment="content">
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2 style="margin:0">게시글작성</h2>
+						</header><br/>
+								<!-- Contents -->
+						<div class="col-8 col-12-medium imp-medium">
+									<blockquote style="padding:0; "><h4>　고객게시판 > 게시글작성</h4></blockquote><br/><br/>
+									<section>
+												<form role="form" th:action="@{/board/update}" method="post" encType="multipart/form-data">
+													<div class="row gtr-uniform gtr-50" style="margin-left:15em; width:1400px;">
+
+														<div class="col-12" style="width:25%">
+															<select name="category" id="category" required>
+																<option value="" >- 카테고리 선택-</option>
+																<option value="1" th:selected="${detail.category}=='1'">예약확인/취소</option>
+																<option value="2" th:selected="${detail.category}=='2'">마이페이지</option>
+																<option value="3" th:selected="${detail.category}=='3'">기타문의</option>
+															</select>
+														</div>
+														<div class="col-6 col-12-xsmall" style="width:15%">
+															<span th:text="${detail.name}"></span>
+														</div>
+														<div class="col-6 col-12-xsmall" style="width:15%">
+															<span><input type="file" name="files" id="files" value="" /></span>
+														</div>
+														<div class="col-6 col-12-xsmall" style="width:60%">
+															<input type="text" th:name="title" id="title" th:value="${detail.title}" placeholder="제목을 입력하세요"required/>
+														</div>　
+														<div class="col-12" style="width:60%;" >
+															<textarea name="content" id="content" rows="6"  placeholder="내용을 입력하세요"  style="resize:none;" th:text="${detail.content}"required></textarea>
+														</div>
+														<div class="col-6 col-12-medium">
+															<input type="checkbox" id="pub" name="pub" th:checked="${detail.pubYn}=='N'">
+															<label for="pub">비공개</label>
+														</div><br/><br/><br/><br/>
+
+
+
+														<div class="col-12">
+															<ul class="actions" style="margin-left:12em;">
+																<li><input type="submit" value="수정" class="button primary small"/></li>
+																<li><input type="button" class="button small" value="취소" onclick="history.back(-1);"></li>
+															</ul>
+														</div>
+													</div>
+												</form>
+											</section>
+								</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+
+		</div>
+	</body>
+</th:block>
+</html>

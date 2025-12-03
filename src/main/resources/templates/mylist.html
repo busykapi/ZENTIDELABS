@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/layout">
+<th:block layout:fragment="content">
+	<head>
+		<title>YZ Tour : 고객게시판</title>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2 style="margin:0">내가 쓴 글</h2>
+						</header>
+							<!-- Contents -->
+							<div class="col-8 col-12-medium imp-medium">
+								<blockquote style="padding:0"><h4>　내가 쓴 글</h4></blockquote><br/><br/>
+									<!-- Search -->
+									<div class="container">
+										<div class="row" style=" margin-left:-4.5em;">
+											<form action="/board" method="get" name="search" >
+												<table>
+													<tr>
+														<td>
+															<select class="col-12" name="searchField">
+																<option value="0">선택</option>
+																<option value="bbsTitle">제목</option>
+																<option value="userID">작성자</option>
+															</select>
+														</td>
+														<td><input type="text" placeholder="검색어 입력" name="searchText" maxlength="100"></td>
+														<td><button type="submit" class="button primary small">검색</button></td>
+													</tr>
+												</table>
+											</form>
+										</div>
+									</div><br/>
+									<div class="table-wrapper">
+										<table >
+											<thead style="padding:0.25em 0.75em;">
+												<tr style="padding:0.25em 0.75em;">
+													<th style="height:2em;">글번호</th>
+													<th>제목</th>
+													<th>작성자</th>
+													<th>작성일</th>
+													<th>조회수</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>5</td>
+													<td><a href="/board/detail">예제1 글작성을 위한 예시폼입니다.</a></td>
+													<td>워니</td>
+													<td>2022-11-25</td>
+													<td>777</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td><a href="/board/detail">예제2</a></td>
+													<td>권예지</td>
+													<td>2022-11-25</td>
+													<td>768</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td><a href="/board/detail">예제3</a></td>
+													<td>이혜원</td>
+													<td>2022-11-25</td>
+													<td>471</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td><a href="/board/detail">예제4</a></td>
+													<td>쿼카</td>
+													<td>2022-11-25</td>
+													<td>1000</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td><a href="/board/detail">예제5</a></td>
+													<td>홍길동</td>
+													<td>2022-11-25</td>
+													<td>0</td>
+												</tr>
+											</tbody>
+										</table>
+									</div><br/>
+
+									<div style="float:right;"><span><strong style="color:bisque;"> 1</strong></span> / 1 pages</div><br/>
+									<div class="parent" style="text-align:center;">
+										<div class="first" style="width:32%; float:left;  box-sizing: border-box;" >
+											<span class="button small" style="padding:0 0.5em 0.5em 0.5em; " onclick="alert('이전 페이지가 없습니다.');"> < </span>
+										</div>
+										<div>
+											<ul class="second" style="list-style: none; padding-left: 0px; text-align:center; float: left; width:30%; margin-left: 5%; box-sizing: border-box;">
+												<li><a href="?p=1&t=&q="><strong style="color:bisque;">1</strong></a></li>
+											</ul>
+										</div>
+										<div class="third" style="width:32%; float:right;  box-sizing: border-box;">
+											<span class="button small" style="padding:0 0.5em 0.5em 0.5em; " onclick="alert('다음 페이지가 없습니다.');"> > </span>
+										</div>
+									</div><br/><br/><br/>
+							</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+
+		</div>
+	</body>
+</th:block>
+</html>

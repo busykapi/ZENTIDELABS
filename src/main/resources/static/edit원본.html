@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>YZ Tour : 고객게시판</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">당신의 여행파트너, YZ Tour</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">메인</a></li>
+							<li>
+								<a href="#">예약하기</a>
+								<ul>
+									<li><a href="local.html">국내패키지상품</a></li>
+									<li><a href="overseas.html">해외패키지상품</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option 1</a></li>
+											<li><a href="#">Option 2</a></li>
+											<li><a href="#">Option 3</a></li>
+											<li><a href="#">Option 4</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="mypage.html">마이페이지</a>
+								<ul>
+									<li><a href="#">내가입정보</a></li>
+									<li><a href="#">내가 쓴글</a></li>
+									<li><a href="#">예약확인 / 취소</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="board.html">고객게시판</a>
+							</li>
+							<li><a href="login.html" class="button primary small">로그인</a></li>
+							<li><a href="join.html" class="button primary small">회원가입</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2 style="margin:0">고객게시판</h2>
+						</header><br/>
+								<!-- Contents -->
+						<div class="col-8 col-12-medium imp-medium" >
+						<blockquote style="padding:0; margin-left: 10em;"><h4>　고객게시판 > 게시글수정</h4></blockquote><br/><br/>
+							<section>
+								<form action="detail.html" method="post">
+									<div class="row gtr-uniform gtr-50" style="margin-left:15em; width:1400px;">
+										<div class="col-12" style="width:25%">
+											<select name="category" id="category" required>
+												<option value="">- 카테고리 선택-</option>
+												<option value="1">예약확인/취소</option>
+												<option value="1">마이페이지</option>
+												<option value="1">기타문의</option>
+											</select>
+										</div>
+										<div class="col-6 col-12-xsmall" style="width:15%">
+											<input type="text" name="writerId" id="writerId" value="" placeholder="작성자" required/>
+										</div>
+										<div class="col-6 col-12-xsmall" style="width:15%">
+											<input type="file" name="file" id="file" value="" required/>
+										</div>
+										<div class="col-6 col-12-xsmall" style="width:60%">
+											<input type="text" name="title" id="title" value="" placeholder="제목을 입력하세요" required/>
+										</div>　
+										<div class="col-12" style="width:60%;" >
+											<textarea name="content" id="content" rows="6"  placeholder="내용을 입력하세요" required></textarea>
+										</div>
+										<div class="col-6 col-12-medium">
+											<input type="checkbox" id="pub" name="pub">
+											<label for="pub">비공개</label>
+										</div><br/><br/><br/><br/>
+
+
+
+										<div class="col-12">
+											<ul class="actions" style="float:center">
+												<li><input type="submit" value="글쓰기" name="write" class="button primary small" /></li>
+												<li><a href="board.html" class="button small">취소</a></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>(주) YZ Tour</li>
+						<li>대표자 : 권예지</li>
+						<li>☎ TEL 010-7129-3630</li><br/><br/>
+						<li>본사주소 : 서울시 강남대로 1000억빌딩 YZ투어</li>
+						<li>사업자등록번호 : 000-81-00000</li><br/><br/>
+						<li>Copyright&copy; YZ TOUR service Inc. All rights reserved.</li>
+					</ul>
+				</footer>
+		</div>
+
+			<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/jquery.dropotron.min.js"></script>
+				<script src="assets/js/jquery.scrollex.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+	</body>
+</html>
