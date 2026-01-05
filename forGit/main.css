@@ -1,4 +1,4 @@
-@import url("forGit/fontawesome-all.min.css");
+@import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
 
 /*
@@ -2951,7 +2951,7 @@ input, select, textarea {
 	}
 
 		.goto-next:before {
-			background-image: url("forGit/arrow.svg");
+			background-image: url("arrow.svg");
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -3455,7 +3455,7 @@ input, select, textarea {
     #banner {
     		background-attachment: fixed;
     		background-color: #272833;
-			background-image: url("forGit/largemain1.gif");
+			background-image: url("largemain1.gif");
     		background-position: center center;
     		background-size: cover;
     		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
@@ -4160,4 +4160,5 @@ input, select, textarea {
 	object-fit: cover; /* 🔥 늘어남 방지 + 꽉 채우기 */
 
 }
+
 
