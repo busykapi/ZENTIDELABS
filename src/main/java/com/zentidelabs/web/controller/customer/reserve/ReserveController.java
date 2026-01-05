@@ -5,24 +5,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ReserveController {
-    @GetMapping("/overseas")
-    public String overseas(){
-        return "overseas";
+    @GetMapping("/works")
+    public String works(){
+        return "works";
     }
 
-    @GetMapping("/local")
-    public String local(){
-        return "local";
+    @GetMapping("/about")
+    public String about(){
+        return "about";
     }
 
-    @GetMapping("/reserve")
-    public String reserve(){
-        return "reserve";
+    @GetMapping("/contact")
+    public String contact(){
+        return "contact";
     }
 
-    @GetMapping("/calendar")
-    public String calendar(){
-        return "calendar";
+    @GetMapping("/out")
+    public String out(){
+        return "out";
     }
-
 }

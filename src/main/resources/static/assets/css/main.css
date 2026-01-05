@@ -132,6 +132,7 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
+		margin-left: 5px;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -3492,7 +3493,7 @@ input, select, textarea {
     			max-width: 95%;
     			padding: 6em;
     			position: relative;
-    			text-align: right;
+    			/*text-align: right; 메인화면 글씨 우측정렬*/
     			vertical-align: middle;
     			z-index: 1;
     		}
@@ -4113,3 +4114,48 @@ input, select, textarea {
 					}
 
 	}
+
+/* 추가 사용자정의 */
+
+/*틀*/
+.detailScreen {
+	display: flex;     /* ⭐ 좌우 분할 */
+	width: 100%;
+	/*height: 100vh;*/
+}
+
+/* 왼쪽 */
+.detailLeft {
+	width: 50%;
+	/*border-right: 1px solid rgba(255,255,255,0.2);*/
+	/*padding: 80px;*/
+}
+
+/* 오른쪽 */
+.detailRight {
+	width: 50%;
+	/*padding: 80px;*/
+}
+
+/*이미지 그리드*/
+.image-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* 좌우 2칸 */
+	gap: 5px;
+	margin-top: 20px;
+}
+
+/*이미지 박스*/
+.img-box {
+	width: 100%;
+	aspect-ratio: 16 / 9; /* 🔥 이미지 비율 고정 (중요) */
+	overflow: hidden;
+	background-color: #000;
+}
+
+/*이미지 박스 이미지*/
+.img-box img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* 🔥 늘어남 방지 + 꽉 채우기 */
+}

@@ -39,7 +39,7 @@ public class BoardController {
     @GetMapping("/write")
     public String write(){
 
-        return "write";
+        return "contact";
     }
 
     @PostMapping("/insert")

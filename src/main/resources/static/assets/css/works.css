@@ -1,0 +1,270 @@
+* {box-sizing:border-box}
+div.rsvContainer {
+    width: 100%;
+}
+
+section#content {
+    width: 100%;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Hide the images by default */
+.mySlides1 {
+  display: none;
+}
+
+/* Hide the images by default */
+.mySlides2 {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+
+.prev1, .next1 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* ⭐ 이게 더 정확 */
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;   /* 🔥 크기도 키움 */
+  line-height: 1;
+  transition: 0.3s ease;
+  user-select: none;
+  z-index: 10;
+}
+
+/* 왼쪽 화살표 */
+.prev1 {
+  left: 10px;   /* 🔥 슬라이드 밖으로 */
+}
+
+/* 오른쪽 화살표 */
+.next1 {
+  right: 10px;  /* 🔥 슬라이드 밖으로 */
+}
+
+.prev2, .next2 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* ⭐ 이게 더 정확 */
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;   /* 🔥 크기도 키움 */
+  line-height: 1;
+  transition: 0.3s ease;
+  user-select: none;
+  z-index: 10;
+}
+
+/* 왼쪽 화살표 */
+.prev2 {
+  left: 10px;   /* 🔥 슬라이드 밖으로 */
+}
+
+/* 오른쪽 화살표 */
+.next2 {
+  right: 10px;  /* 🔥 슬라이드 밖으로 */
+}
+
+
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/*앱,웹 화살표 호버 추가*/
+/* On hover, add a black background color with a little bit see-through */
+.prev1:hover, .next1:hover {
+  background-color: rgba(62, 62, 62, 0.8);
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev2:hover, .next2:hover {
+  background-color: rgba(62, 62, 62, 0.8);
+}
+
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+/*추가*/
+/*.gallery {*/
+/*  display: grid;*/
+/*  grid-template-columns: repeat(5, 160px); !* 가로 5 *!*/
+/*  gap: 24px;*/
+/*  transform: none;*/
+/*}*/
+
+/*.item {*/
+/*  text-align: center;*/
+/*}*/
+
+/*.item .circle {*/
+/*  width: 250px;*/
+/*  aspect-ratio: 1 / 1;*/
+/*  border-radius: 40%;*/
+/*  overflow: hidden;*/
+/*  margin: 0 auto;*/
+/*}*/
+
+/*.item img {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  object-fit: cover;*/
+/*}*/
+
+/*.item .name{*/
+/*  display: block;*/
+/*  width: 100%;*/
+/*  text-align: center;*/
+/*  margin-top: 10px;*/
+/*  font-variant-numeric: tabular-nums;*/
+/*}*/
+
+
+
+
+/*!* 가장 확실한 해결: appGrid에 직접 강제 *!*/
+/*#appGrid, #appGrid2 {*/
+/*  display: inline-grid;*/
+/*  grid-template-columns: repeat(5, 160px);*/
+/*  gap: 120px;*/
+/*  justify-content: center;*/
+
+/*  margin: 0 auto;          !* 가운데로 *!*/
+/*}*/
+
+/*!* 부모가 inline-grid를 가운데에 배치하도록 *!*/
+/*.mySlides1, .mySlides2 {*/
+/*  text-align: center;*/
+/*}*/
+
+
+/*추가2*/
+:root{
+  --icon: 250px;
+  --gap: 24px;
+}
+
+/* grid는 appGrid에서만 통제 */
+#appGrid, #appGrid2 {
+  display: inline-grid;
+  grid-template-columns: repeat(5, var(--icon));
+  gap: var(--gap);
+  margin: 0 auto;
+}
+
+/* inline-grid를 가운데로 배치 */
+.mySlides1, .mySlides2 {
+  text-align: center;
+}
+
+/* 아이템 */
+.item { text-align: center; }
+
+.item .circle {
+  width: var(--icon);
+  aspect-ratio: 1 / 1;
+  border-radius: 40%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item .name{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  font-variant-numeric: tabular-nums;
+}
