@@ -3,8 +3,28 @@
 	<head>
 		<title>ZENTIDE LABS : CONTACT</title>
 	</head>
-<th:block layout:fragment="content">
-	<body class="is-preload">
+	<header id="header">
+            <h1 id="logo"><a th:href="@{/}"><b>ZENTIDE LABS</b></a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a th:href="@{/}">Main</a></li>
+                    <li>
+                        <a th:href="@{/about}">About</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/works}">Works</a>
+                        <ul>
+                            <li><a th:href="@{/works}">App</a></li>
+                            <li><a th:href="@{/works}">Web</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a th:href="@{/contact}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+	<body>
 		<div id="page-wrapper">
 			<!-- Header -->
 
@@ -50,8 +70,6 @@
 															<label for="pub">비공개</label>
 														</div><br/><br/><br/><br/>
 
-
-
 														<div class="col-12">
 															<ul class="actions" style="margin-left:12em;">
 																<li><input type="submit" value="글쓰기" class="button primary small" /></li>
@@ -66,10 +84,15 @@
 								</div>
 					</div>
 				</div>
-
-			<!-- Footer -->
-
 		</div>
 	</body>
-</th:block>
+	<footer id="footer">
+		<ul class="copyright">
+			<li>젠타이드랩스</li>
+			<li>ZENTIDE LABS</li>
+			<li>Copyright&copy; 2025 ZENTIDE LABS All Rights Reserved.</li>
+			<li><a href="https://www.instagram.com/" target="_blank" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="https://www.naver.com" target="_blank" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+	</footer>
 </html>
