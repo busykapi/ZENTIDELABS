@@ -1,6 +1,32 @@
 <!DOCTYPE HTML>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/layout">
-	<th:block layout:fragment="content">
+		<head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+            <link rel="stylesheet" href="/assets/css/main.css" />
+            <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+        </head>
+		<header id="header">
+            <h1 id="logo"><a th:href="@{/}"><b>ZENTIDE LABS</b></a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a th:href="@{/}">Main</a></li>
+                    <li>
+                        <a th:href="@{/about}">About</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/works}">Works</a>
+                        <ul>
+                            <li><a th:href="@{/works}">App</a></li>
+                            <li><a th:href="@{/works}">Web</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a th:href="@{/contact}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 		<body class="is-preload landing">
 			<div id="page-wrapper">
 			 <!--Header-->
@@ -8,7 +34,6 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-<!--							<h2>세상의 흐름을 만듭니다. <br>ZENTIDE LABS<br></h2>-->
 							<h2>일상의 흐름을 만들다 <br>ZENTIDE LABS<br></h2>
 						</header>
 <!--						<span class="image"><img src="/images/ZTL3.png" alt="" /></span>-->
@@ -141,5 +166,13 @@
 
 			</div>
 		</body>
-	</th:block>
+		<footer id="footer">
+            <ul class="copyright">
+                <li>젠타이드랩스</li>
+                <li>ZENTIDE LABS</li>
+                <li>Copyright&copy; 2025 ZENTIDE LABS All Rights Reserved.</li>
+                <li><a href="https://www.instagram.com/" target="_blank" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://www.naver.com" target="_blank" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+        </footer>
 </html>
