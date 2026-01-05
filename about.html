@@ -1,15 +1,35 @@
 <!DOCTYPE HTML>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorate="layout/layout" xmlns="http://www.w3.org/1999/html">
-<th:block layout:fragment="content">
 	<head>
 		<title>ZENTIDE LABS : 회사소개</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="forGit/main.css" />
+		<noscript><link rel="stylesheet" href="forGit/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<header id="header">
+            <h1 id="logo"><a th:href="@{/}"><b>ZENTIDE LABS</b></a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a th:href="@{/}">Main</a></li>
+                    <li>
+                        <a th:href="@{/about}">About</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/works}">Works</a>
+                        <ul>
+                            <li><a th:href="@{/works}">App</a></li>
+                            <li><a th:href="@{/works}">Web</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a th:href="@{/contact}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+	<body>
 		<div id="page-wrapper">
 			<!-- Main -->
 				<div id="main" class="wrapper style1">
@@ -22,10 +42,10 @@
 						<section id="content">
 							<div class="image-grid">
 								<div class="img-box">
-									<img src="images/ZTL1.png" alt="ZTLlogo" />
+									<img src="forGit/ZTL1.png" alt="ZTLlogo" />
 								</div>
 								<div class="img-box">
-									<img src="images/ZTL2.png" alt="ZTLlogo" />
+									<img src="forGit/ZTL2.png" alt="ZTLlogo" />
 								</div>
 							</div>
 							<br>
@@ -91,20 +111,35 @@
 								</ul>
 								<div class="image-grid">
 									<div class="img-box">
-										<img src="images/web2.jpg" alt="" />
+										<img src="forGit/web2.jpg" alt="" />
 									</div>
 									<div class="img-box">
-										<img src="images/labs7.jpg" alt="" />
+										<img src="forGit/labs7.jpg" alt="" />
 									</div>
 								</div>
 							</div>
 						</section>
 					</div>
 				</div>
-
-			<!-- Footer -->
-
 		</div>
+		<script src="assets/js/jquery.min.js"></script>
+	    <script src="assets/js/jquery.scrolly.min.js"></script>
+	    <script src="assets/js/jquery.dropotron.min.js"></script>
+	    <script src="assets/js/jquery.scrollex.min.js"></script>
+	    <script src="assets/js/browser.min.js"></script>
+	    <script src="assets/js/breakpoints.min.js"></script>
+	    <script src="assets/js/util.js"></script>
+	    <script src="assets/js/main.js"></script>
 	</body>
-</th:block>
+	<footer id="footer">
+            <ul class="copyright">
+                <li>젠타이드랩스</li>
+                <li>ZENTIDE LABS</li>
+                <li>Copyright&copy; 2025 ZENTIDE LABS All Rights Reserved.</li>
+
+<!--            <ul class="icons">-->
+                <li><a href="https://www.instagram.com/" target="_blank" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://www.naver.com" target="_blank" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+    </footer>
 </html>
