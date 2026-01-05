@@ -1,4 +1,4 @@
-@import url("fontawesome-all.min.css");
+@import url("forGit/fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
 
 /*
@@ -4158,4 +4158,5 @@ input, select, textarea {
 	width: 100%;
 	height: 100%;
 	object-fit: cover; /* 🔥 늘어남 방지 + 꽉 채우기 */
+
 }
