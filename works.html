@@ -1,13 +1,33 @@
 <!DOCTYPE HTML>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorate="layout/layout" xmlns="http://www.w3.org/1999/html">
-<th:block layout:fragment="content">
 	<head>
 		<title>ZENTIDE LABS : WORKS</title>
-		<link rel="stylesheet" href="assets/css/works.css" />
-		<script src="assets/js/works.js" defer></script>
+		<link rel="stylesheet" href="forGit/works.css" />
+		<script src="forGit/works.js" defer></script>
 	</head>
-	<body class="is-preload">
+	<header id="header">
+            <h1 id="logo"><a th:href="@{/}"><b>ZENTIDE LABS</b></a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a th:href="@{/}">Main</a></li>
+                    <li>
+                        <a th:href="@{/about}">About</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/works}">Works</a>
+                        <ul>
+                            <li><a th:href="@{/works}">App</a></li>
+                            <li><a th:href="@{/works}">Web</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a th:href="@{/contact}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+	<body>
 		<div id="page-wrapper">
 			<!-- Main -->
 				<div id="main" class="wrapper style1" style="padding:0 0 4em 0;">
@@ -18,21 +38,21 @@
 
 									<div class="mySlides fade">
 										<div class="numbertext">1 / 4</div>
-										<img src="/images/Image2.jpg" style="width:100%; height:auto;">
+										<img src="forGit/Image2.jpg" style="width:100%; height:auto;">
 									</div>
 
 									<div class="mySlides fade">
 										<div class="numbertext">2 / 4</div>
-										<img src="/images/Image2.jpg" style="width:100%; height:auto;">
+										<img src="forGit/Image2.jpg" style="width:100%; height:auto;">
 									</div>
 
 									<div class="mySlides fade">
 										<div class="numbertext">3 / 4</div>
-										<img src="/images/Image2.jpg" style="width:100%; height:auto;">
+										<img src="forGit/Image2.jpg" style="width:100%; height:auto;">
 									</div>
 									<div class="mySlides fade">
 										<div class="numbertext">4 / 4</div>
-										<img src="/images/Image2.jpg" style="width:100%; height:auto;">
+										<img src="forGit/Image2.jpg" style="width:100%; height:auto;">
 									</div>
 
 									<!-- Next and previous buttons -->
@@ -123,10 +143,15 @@
 							</div>
 					</div>
 				</div>
-
-			<!-- Footer -->
-
 		</div>
 	</body>
-</th:block>
+	<footer id="footer">
+            <ul class="copyright">
+                <li>젠타이드랩스</li>
+                <li>ZENTIDE LABS</li>
+                <li>Copyright&copy; 2025 ZENTIDE LABS All Rights Reserved.</li>
+                <li><a href="https://www.instagram.com/" target="_blank" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://www.naver.com" target="_blank" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+    </footer>
 </html>
