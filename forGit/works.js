@@ -104,13 +104,13 @@ const grid2 = document.getElementById("appGrid2");
 if (!grid){console.log("실패")}
 
 async function initApps() {
-  const res = await fetch("/apps.json");
+  const res = await fetch("forGit/apps.json");
   apps = await res.json(); // 배열
   renderApps();
 }
 
 async function initApps2() {
-  const res2 = await fetch("/apps2.json");
+  const res2 = await fetch("forGit/apps2.json");
   apps2 = await res2.json(); // 배열
   renderApps2();
 }
@@ -192,6 +192,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   showSlides2(1);
 
 });
+
 
 
 
