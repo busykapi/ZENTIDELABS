@@ -3,27 +3,6 @@
 	<head>
 		<title>ZENTIDE LABS : CONTACT</title>
 	</head>
-	<header id="header">
-            <h1 id="logo"><a th:href="@{/}"><b>ZENTIDE LABS</b></a></h1>
-            <nav id="nav">
-                <ul>
-                    <li><a th:href="@{/}">Main</a></li>
-                    <li>
-                        <a th:href="@{/about}">About</a>
-                    </li>
-                    <li>
-                        <a th:href="@{/works}">Works</a>
-                        <ul>
-                            <li><a th:href="@{/works}">App</a></li>
-                            <li><a th:href="@{/works}">Web</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a th:href="@{/contact}">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-    </header>
 	<body>
 		<div id="page-wrapper">
 			<!-- Header -->
@@ -31,8 +10,27 @@
 			<!-- Main -->
 				<div id="main" class="wrapper style1">
 					<div class="container">
-						<header class="major">
+						<header class="major" id="header">
 							<h2 style="margin:0">문의남기기</h2>
+							<h1 id="logo"><a th:href="@{/}"><b>ZENTIDE LABS</b></a></h1>
+				            <nav id="nav">
+				                <ul>
+				                    <li><a th:href="@{/}">Main</a></li>
+				                    <li>
+				                        <a th:href="@{/about}">About</a>
+				                    </li>
+				                    <li>
+				                        <a th:href="@{/works}">Works</a>
+				                        <ul>
+				                            <li><a th:href="@{/works}">App</a></li>
+				                            <li><a th:href="@{/works}">Web</a></li>
+				                        </ul>
+				                    </li>
+				                    <li>
+				                        <a th:href="@{/contact}">Contact</a>
+				                    </li>
+				                </ul>
+				            </nav>
 						</header><br/>
 								<!-- Contents -->
 						<div class="col-8 col-12-medium imp-medium">
@@ -96,3 +94,4 @@
 		</ul>
 	</footer>
 </html>
+
