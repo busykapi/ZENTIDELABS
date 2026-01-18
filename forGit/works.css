@@ -11,7 +11,6 @@ section#content {
 .slideshow-container {
   width: 100%;
   position: relative;
-  margin: auto;
 }
 
 /* Hide the images by default */
@@ -171,21 +170,30 @@ section#content {
 
 
 
-
-/*추가*/
-/*.gallery {*/
-/*  display: grid;*/
-/*  grid-template-columns: repeat(5, 160px); !* 가로 5 *!*/
-/*  gap: 24px;*/
-/*  transform: none;*/
+/*!*추가*!*/
+/*:root{*/
+/*  --icon: 250px;*/
+/*  --gap: 24px;*/
 /*}*/
 
-/*.item {*/
+/*!* grid는 appGrid에서만 통제 *!*/
+/*#appGrid, #appGrid2 {*/
+/*  display: inline-grid;*/
+/*  grid-template-columns: repeat(5, var(--icon));*/
+/*  gap: var(--gap);*/
+/*  margin: 0 auto;*/
+/*}*/
+
+/*!* inline-grid를 가운데로 배치 *!*/
+/*.mySlides1, .mySlides2 {*/
 /*  text-align: center;*/
 /*}*/
 
+/*!* 아이템 *!*/
+/*.item { text-align: center; }*/
+
 /*.item .circle {*/
-/*  width: 250px;*/
+/*  width: var(--icon);*/
 /*  aspect-ratio: 1 / 1;*/
 /*  border-radius: 40%;*/
 /*  overflow: hidden;*/
@@ -209,62 +217,150 @@ section#content {
 
 
 
-/*!* 가장 확실한 해결: appGrid에 직접 강제 *!*/
-/*#appGrid, #appGrid2 {*/
-/*  display: inline-grid;*/
-/*  grid-template-columns: repeat(5, 160px);*/
-/*  gap: 120px;*/
-/*  justify-content: center;*/
-
-/*  margin: 0 auto;          !* 가운데로 *!*/
-/*}*/
-
-/*!* 부모가 inline-grid를 가운데에 배치하도록 *!*/
-/*.mySlides1, .mySlides2 {*/
-/*  text-align: center;*/
-/*}*/
 
 
 /*추가2*/
+/* ===== 앱/웹 그리드 반응형 ===== */
 :root{
-  --icon: 250px;
-  --gap: 24px;
+  --icon: 220px;   /* 기본 아이콘 크기 (PC) */
+  --gap: 20px;
 }
 
-/* grid는 appGrid에서만 통제 */
-#appGrid, #appGrid2 {
-  display: inline-grid;
-  grid-template-columns: repeat(5, var(--icon));
+/* 기존 inline-grid + repeat(5, 고정) 제거하고 grid로 */
+#appGrid, #appGrid2{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)); /* PC 기본: 5열 고정(=2줄로 보여주기 쉬움) */
   gap: var(--gap);
+  width: min(1200px, 100%);   /* 가운데 정렬 + 최대폭 제한 */
   margin: 0 auto;
+  padding: 0 16px;            /* 양옆 여백 */
+  align-items: start;
 }
 
-/* inline-grid를 가운데로 배치 */
-.mySlides1, .mySlides2 {
+.mySlides1, .mySlides2{
   text-align: center;
 }
 
 /* 아이템 */
-.item { text-align: center; }
+.item{
+  text-align: center;
+  min-width: 0;
+}
 
-.item .circle {
-  width: var(--icon);
+/* 동그라미(네가 40%로 둔 것 유지 가능) */
+.item .circle{
+  width: 100%;
+  max-width: var(--icon);
   aspect-ratio: 1 / 1;
   border-radius: 40%;
   overflow: hidden;
   margin: 0 auto;
 }
 
-.item img {
+.item img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display:block;
 }
 
+/* 이름 텍스트가 길어서 레이아웃 깨지는 것 방지 */
 .item .name{
-  display: block;
-  width: 100%;
-  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;      /* 최대 2줄까지만 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
   margin-top: 10px;
-  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+/* ===== 브레이크포인트: 아이콘 크기/열 수 자연스럽게 줄이기 ===== */
+@media (max-width: 1024px){
+  :root{ --icon: 180px; --gap: 16px; }
+}
+
+@media (max-width: 768px){
+  :root{ --icon: 140px; --gap: 14px; }
+
+  .prev1, .next1, .prev2, .next2{
+    font-size: 26px;
+    padding: 12px;
+  }
+  .prev1, .prev2{ left: 6px; }
+  .next1, .next2{ right: 6px; }
+
+}
+
+@media (max-width: 480px){
+  :root{ --icon: 110px; --gap: 12px; }
+}
+
+/* 태블릿 이하: 자동 */
+@media (max-width: 1024px){
+  #appGrid, #appGrid2{
+    grid-template-columns: repeat(auto-fit, minmax(var(--icon), 1fr));
+  }
+}
+
+
+
+/* Contact us 4개를 grid로: 4열 -> 2열 -> 1열 */
+.contactGrid{
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+}
+
+/* inline style로 float/width 줬어도 강제로 무력화 */
+.contactGrid > section{
+  width: auto !important;
+  float: none !important;
+}
+
+/* 글이 길어서 세로로 늘어지는 문제: 줄수 제한(선택) */
+.contactGrid h6{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* 최대 2줄 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.35;
+  word-break: break-word;
+  margin: 6px 0 0;
+}
+
+.contactGrid p, .contactGrid h5{
+  margin: 8px 0 0;
+  word-break: break-word;
+}
+
+/* 태블릿: 2열 */
+@media (max-width: 900px){
+  .contactGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* 모바일: 1열 */
+@media (max-width: 520px){
+  .contactGrid{ grid-template-columns: 1fr; }
+}
+
+
+
+
+/*최하단 글자늘어짐방지*/
+.contactGrid p{
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.contactGrid h5{
+  font-size: 16px;
+  margin-top: 6px;
+}
+
+.contactGrid h6{
+  font-size: 12px;
+  opacity: 0.75;
 }
