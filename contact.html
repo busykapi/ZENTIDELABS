@@ -16,76 +16,63 @@
 					<div class="container">
 						<header class="major">
 							<h2 style="margin:0">문의남기기</h2>
-						</header><br/>	
-						<header id="header">
-							<h1 id="logo"><a href="index.html"><b>ZENTIDE LABS</b></a></h1>
-				            <nav id="nav">
-				                <ul>
-				                    <li><a href="index.html">Main</a></li>
-				                    <li>
-				                        <a href="about.html">About</a>
-				                    </li>
-				                    <li>
-				                        <a href="works.html">Works</a>
-				                        <ul>
-				                            <li><a href="works.html">App</a></li>
-				                            <li><a href="works.html">Web</a></li>
-				                        </ul>
-				                    </li>
-				                    <li>
-				                        <a :href="contact.html">Contact</a>
-				                    </li>
-				                </ul>
-				            </nav>
 						</header><br/>
 								<!-- Contents -->
-						<div class="col-8 col-12-medium imp-medium">
+						<div class="contact-center">
+							<div class="contact-box">
+								<div class="col-8 col-12-medium imp-medium">
 									<blockquote style="padding:0; "><h4>　CONTACT > 문의남기기</h4></blockquote>
 									<blockquote style="padding:0; ">
 										<h6>　건의사항 및 오류 관련 문의, 기타 프로젝트 문의 남겨주세요.<br></h6>
 										<h6>　업무 특성상 즉각적인 응답은 어려울 수 있으며, 확인 후 순차적으로 회신드리겠습니다.<br></h6>
 									</blockquote><br><br>
 									<section>
-												<form role="form" action="https://formspree.io/f/mvzgvbeq" method="POST" encType="multipart/form-data">
-													<div class="row gtr-uniform gtr-50">
+										<form role="form" action="https://formspree.io/f/mvzgvbeq" method="POST" enctype="multipart/form-data">
 
-														<div class="col-12" style="width:25%">
-															<select name="category" id="category" required>
-																<option value="">- 카테고리 선택 -</option>
-																<option value="App">App</option>
-																<option value="Web">Web</option>
-																<option value="etc">기타문의</option>
-															</select>
-														</div>
-														<div class="col-6 col-12-xsmall" style="width:15%">
-															<input type="text" name="memberId" id="memberId" value="" placeholder="작성자" required/>
-														</div>
-														<div class="col-6 col-12-xsmall" style="width:15%">
-															<input type="file" name="files" id="files" value="" />
-														</div>
-														<div class="col-6 col-12-xsmall" style="width:60%">
-															<input type="text" name="title" id="title" value="" placeholder="제목을 입력하세요" required/>
-														</div>　
-														<div class="col-12" style="width:60%;" >
-															<textarea name="content" id="content" rows="6"  placeholder="내용을 입력하세요"  style="resize:none;" minlength="20" required></textarea>
-														</div>
-														<div class="col-6 col-12-medium" style="width:60%;" >
-															<input type="checkbox" id="pub" name="pub">
-															<label for="pub">비공개</label>
-														</div><br/><br/><br/><br/>
+											<div class="row gtr-uniform gtr-50 contact-form">
 
-														<div class="col-12">
-															<ul class="actions" style="justify-content: center;">
-																<li><input type="submit" value="글쓰기" class="button primary small" /></li>
-<!--																<li><input type="button" class="button small" value="취소" onclick="history.back(-1);"></li>-->
-																<li><input type="button" class="button small" value="취소" onclick="history.back();"></li>
-															</ul>
-														</div>
-													</div>
-												</form>
+												<div class="col-3 col-12-small">
+													<select name="category" id="category" required>
+														<option value="">- 카테고리 선택 -</option>
+														<option value="App">App</option>
+														<option value="Web">Web</option>
+														<option value="etc">기타문의</option>
+													</select>
+												</div>
 
-											</section>
+												<div class="col-3 col-12-small">
+													<input type="text" name="memberId" id="memberId" placeholder="작성자" required />
+												</div>
+
+												<div class="col-6 col-12-small">
+													<input type="file" name="files" id="files" />
+												</div>
+
+												<div class="col-12">
+													<input type="text" name="title" id="title" placeholder="제목을 입력하세요" required />
+												</div>
+
+												<div class="col-12">
+													<textarea name="content" id="content" rows="6" placeholder="내용을 입력하세요" style="resize:none;" minlength="20" required></textarea>
+												</div>
+
+												<div class="col-12">
+													<input type="checkbox" id="pub" name="pub">
+													<label for="pub">비공개</label>
+												</div>
+
+												<div class="col-12">
+													<ul class="actions contact-actions">
+														<li><input type="submit" value="전송" class="button primary small" /></li>
+														<li><input type="button" class="button small" value="취소" onclick="history.back();" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</section>
 								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 		</div>
@@ -108,6 +95,7 @@
 		</ul>
 	</footer>
 </html>
+
 
 
 
