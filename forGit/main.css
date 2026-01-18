@@ -4162,3 +4162,83 @@ input, select, textarea {
 }
 
 
+
+
+/*추가*/
+/* 폼 전체 폭: 화면에 맞게 줄고, 너무 넓으면 적당히 제한 */
+.contact-form {
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 0 16px;
+	width: 100%;
+}
+
+/* Contact 페이지: 글+폼 덩어리 자체를 가운데로 */
+.contact-wrap{
+	float: none !important;          /* HTML5UP류 그리드가 float 쓰는 경우 */
+	margin-left: auto !important;
+	margin-right: auto !important;
+	max-width: 980px;                /* 폼/텍스트 폭 제한 */
+	width: 100%;
+}
+
+
+/* action 버튼 가운데 정렬 + 모바일 줄바꿈 */
+.contact-actions {
+	justify-content: center;
+}
+
+
+/* 페이지에서 컨텐츠 덩어리(글+폼) 자체를 가운데로 */
+.contact-center{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/* 가운데 놓일 실제 박스 폭 */
+.contact-box{
+	width: 100%;
+	max-width: 980px;   /* 원하는 폭으로 조절 */
+	padding: 0 16px;
+}
+
+/* 혹시 col-8이 float/width로 우기면 강제로 풀어버림 */
+.contact-box .col-8,
+.contact-box .imp-medium{
+	float: none !important;
+	width: 100% !important;
+	margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+	.contact-form {
+		padding: 0 12px;
+	}
+
+	/* 버튼이 옆으로 길면 아래로 떨어지게 */
+	.contact-actions {
+		flex-direction: column;
+		gap: 10px;
+		align-items: stretch;
+	}
+
+	.contact-actions li {
+		width: 100%;
+	}
+
+	.contact-actions input[type="submit"],
+	.contact-actions input[type="button"] {
+		width: 100%;
+	}
+}
+
+/* contact 페이지에서 container도 가운데 폭으로 */
+#main .container{
+	width: 100%;
+	max-width: 1200px;  /* 필요시 */
+	margin: 0 auto;
+}
+
+
+
