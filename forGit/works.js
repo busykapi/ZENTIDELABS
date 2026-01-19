@@ -94,23 +94,33 @@ function showSlidesAuto() {
 let apps = [];
 let apps2 = [];
 let currentPage = 0;
-const pageSize = 10;
 let currentPage2 = 0;
-const pageSize2 = 10;
 
 const grid = document.getElementById("appGrid");
 const grid2 = document.getElementById("appGrid2");
 
+
+function getPageSize() {
+  const w = window.innerWidth;
+
+  // 모바일/태블릿: 3x2 = 6개
+  if (w <= 1024) return 6;
+
+  // PC: 5x2 = 10개
+  return 10;
+}
+
+
 if (!grid){console.log("실패")}
 
 async function initApps() {
-  const res = await fetch("forGit/apps.json");
+  const res = await fetch("/apps.json");
   apps = await res.json(); // 배열
   renderApps();
 }
 
 async function initApps2() {
-  const res2 = await fetch("forGit/apps2.json");
+  const res2 = await fetch("/apps2.json");
   apps2 = await res2.json(); // 배열
   renderApps2();
 }
@@ -118,6 +128,7 @@ async function initApps2() {
 function renderApps() {
   if (!grid) return;
 
+  const pageSize = getPageSize();
   const start = currentPage * pageSize;
   const end = start + pageSize;
   const pageApps = apps.slice(start, end);
@@ -135,6 +146,7 @@ function renderApps() {
 function renderApps2() {
   if (!grid2) return;
 
+  const pageSize2 = getPageSize();
   const start2 = currentPage2 * pageSize2;
   const end2 = start2 + pageSize2;
   const pageApps2 = apps2.slice(start2, end2);
@@ -152,7 +164,7 @@ function renderApps2() {
 
 // 슬라이드 화살표랑 연결
 function nextPage() {
-  const totalPages = Math.ceil(apps.length / pageSize);
+  const totalPages = Math.ceil(apps.length / getPageSize());
   if (currentPage < totalPages - 1) {
     currentPage++;
     renderApps();
@@ -167,7 +179,7 @@ function prevPage() {
 }
 
 function nextPage2() {
-  const totalPages2 = Math.ceil(apps2.length / pageSize2);
+  const totalPages2 = Math.ceil(apps.length / getPageSize());
   if (currentPage2 < totalPages2 - 1) {
     currentPage2++;
     renderApps2();
@@ -194,6 +206,15 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 
-
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    currentPage = 0;
+    currentPage2 = 0;
+    renderApps();
+    renderApps2();
+  }, 150);
+});
 
 
