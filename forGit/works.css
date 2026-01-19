@@ -170,56 +170,8 @@ section#content {
 
 
 
-/*!*추가*!*/
-/*:root{*/
-/*  --icon: 250px;*/
-/*  --gap: 24px;*/
-/*}*/
 
-/*!* grid는 appGrid에서만 통제 *!*/
-/*#appGrid, #appGrid2 {*/
-/*  display: inline-grid;*/
-/*  grid-template-columns: repeat(5, var(--icon));*/
-/*  gap: var(--gap);*/
-/*  margin: 0 auto;*/
-/*}*/
-
-/*!* inline-grid를 가운데로 배치 *!*/
-/*.mySlides1, .mySlides2 {*/
-/*  text-align: center;*/
-/*}*/
-
-/*!* 아이템 *!*/
-/*.item { text-align: center; }*/
-
-/*.item .circle {*/
-/*  width: var(--icon);*/
-/*  aspect-ratio: 1 / 1;*/
-/*  border-radius: 40%;*/
-/*  overflow: hidden;*/
-/*  margin: 0 auto;*/
-/*}*/
-
-/*.item img {*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*  object-fit: cover;*/
-/*}*/
-
-/*.item .name{*/
-/*  display: block;*/
-/*  width: 100%;*/
-/*  text-align: center;*/
-/*  margin-top: 10px;*/
-/*  font-variant-numeric: tabular-nums;*/
-/*}*/
-
-
-
-
-
-
-/*추가2*/
+/*추가*/
 /* ===== 앱/웹 그리드 반응형 ===== */
 :root{
   --icon: 220px;   /* 기본 아이콘 크기 (PC) */
@@ -300,7 +252,8 @@ section#content {
 /* 태블릿 이하: 자동 */
 @media (max-width: 1024px){
   #appGrid, #appGrid2{
-    grid-template-columns: repeat(auto-fit, minmax(var(--icon), 1fr));
+    /*grid-template-columns: repeat(auto-fit, minmax(var(--icon), 1fr));*/
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -309,26 +262,43 @@ section#content {
 /* Contact us 4개를 grid로: 4열 -> 2열 -> 1열 */
 .contactGrid{
   display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-  margin: 0;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
 }
 
 /* inline style로 float/width 줬어도 강제로 무력화 */
 .contactGrid > section{
-  width: auto !important;
   float: none !important;
+  width: auto !important;
+  min-width: 0;
+  text-align: center;
+}
+
+/* 아이콘 아래 텍스트 정리 */
+.contactGrid p{
+  margin: 10px 0 0;
+  font-size: 14px;
+}
+
+.contactGrid h5{
+  margin: 6px 0 0;
+  font-size: 16px;
 }
 
 /* 글이 길어서 세로로 늘어지는 문제: 줄수 제한(선택) */
 .contactGrid h6{
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.35;
+  opacity: 0.75;
+
+  /* 글 길어져도 카드 높이 폭발 방지 */
   display: -webkit-box;
   -webkit-line-clamp: 2;   /* 최대 2줄 */
   -webkit-box-orient: vertical;
   overflow: hidden;
-  line-height: 1.35;
   word-break: break-word;
-  margin: 6px 0 0;
 }
 
 .contactGrid p, .contactGrid h5{
@@ -336,31 +306,53 @@ section#content {
   word-break: break-word;
 }
 
+#main .box.alt .row.gtr-uniform.contactGrid{
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+  gap: 24px !important;
+}
+
 /* 태블릿: 2열 */
 @media (max-width: 900px){
-  .contactGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contactGrid{ grid-template-columns: repeat(2, 1fr); }
 }
 
 /* 모바일: 1열 */
 @media (max-width: 520px){
-  .contactGrid{ grid-template-columns: 1fr; }
+  .contactGrid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px){
+  #main .box.alt .row.gtr-uniform.contactGrid{
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+  }
 }
 
 
-
-
-/*최하단 글자늘어짐방지*/
-.contactGrid p{
-  font-size: 13px;
-  opacity: 0.85;
+/* ===== 최상단 히어로: 1920x600 비율(=3.2:1) 유지 ===== */
+.slideshow-container.heroSlider{
+  width: 100%;
+  aspect-ratio: 1920 / 600;   /* 핵심: 화면이 줄어도 비율 유지 */
+  max-height: 560px;          /* PC에서 너무 커지면 제한 */
+  overflow: hidden;
+  position: relative;
 }
 
-.contactGrid h5{
-  font-size: 16px;
-  margin-top: 6px;
+/* 모바일에서 너무 낮아지는 것만 방지 (최소 높이 "적당히") */
+@media (max-width: 480px){
+  .slideshow-container.heroSlider{
+    min-height: 220px;        /* 여기 수치만 취향대로 조절 */
+  }
 }
 
-.contactGrid h6{
-  font-size: 12px;
-  opacity: 0.75;
+.slideshow-container.heroSlider .mySlides{
+  height: 100%;
 }
+
+.slideshow-container.heroSlider .mySlides img{
+  width: 100% !important;
+  height: 100% !important;    /* 인라인 height:auto 무력화 */
+  object-fit: cover !important;
+  display: block;
+}
+
