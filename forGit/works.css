@@ -138,10 +138,10 @@ section#content {
 @media (max-width: 768px) {
   .prev1, .next1, .prev2, .next2 {
     font-size: 26px;
-    padding: 12px;
+    padding: 1px;
   }
-  .prev1, .prev2 { left: 6px; }
-  .next1, .next2 { right: 6px; }
+  .prev1, .prev2 { left: -15px; }
+  .next1, .next2 { right: -15px; }
 }
 
 /* =========================================
@@ -326,6 +326,7 @@ section#content {
     margin: 1.5em 0;
   }
 }
+
 
 
 
