@@ -331,11 +331,11 @@ section#content {
    Contact us 아이콘 크기 업
    ========================= */
 .contactGrid .icon.major {
-  width: 3.5em;     /* 기존 ~3em → 살짝 증가 */
-  height: 3.5em;
+  width: 4em;     /* 기존 ~3em → 살짝 증가 */
+  height: 4em;
   line-height: 4.5em;
 
-  font-size: 1em; /* 아이콘 자체 크기 */
+  font-size: 1.4em; /* 아이콘 자체 크기 */
 }
 
 /* =========================
@@ -349,7 +349,16 @@ section#content {
   .contactGrid h5 {
     margin-top: 0;          /* 혹시 남아있는 여백 제거 */
   }
+
+  .contactGrid .icon.major {
+    width: 3.5em;     /* 기존 ~3em → 살짝 증가 */
+    height: 3.5em;
+    line-height: 4.5em;
+  
+    font-size: 1em; /* 아이콘 자체 크기 */
+  }
 }
+
 
 
 
