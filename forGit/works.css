@@ -1,127 +1,28 @@
-* {box-sizing:border-box}
-div.rsvContainer {
-    width: 100%;
-}
+/* =========================================
+   0) Base
+   ========================================= */
+* { box-sizing: border-box; }
 
+div.rsvContainer,
 section#content {
-    width: 100%;
+  width: 100%;
 }
 
-/* Slideshow container */
+/* =========================================
+   1) Slideshow (공통)
+   ========================================= */
 .slideshow-container {
   width: 100%;
   position: relative;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Hide the images by default */
-.mySlides1 {
-  display: none;
-}
-
-/* Hide the images by default */
+.mySlides,
+.mySlides1,
 .mySlides2 {
   display: none;
 }
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-
-
-.prev1, .next1 {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); /* ⭐ 이게 더 정확 */
-  padding: 20px;
-  color: white;
-  font-weight: bold;
-  font-size: 36px;   /* 🔥 크기도 키움 */
-  line-height: 1;
-  transition: 0.3s ease;
-  user-select: none;
-  z-index: 10;
-}
-
-/* 왼쪽 화살표 */
-.prev1 {
-  left: 10px;   /* 🔥 슬라이드 밖으로 */
-}
-
-/* 오른쪽 화살표 */
-.next1 {
-  right: 10px;  /* 🔥 슬라이드 밖으로 */
-}
-
-.prev2, .next2 {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); /* ⭐ 이게 더 정확 */
-  padding: 20px;
-  color: white;
-  font-weight: bold;
-  font-size: 36px;   /* 🔥 크기도 키움 */
-  line-height: 1;
-  transition: 0.3s ease;
-  user-select: none;
-  z-index: 10;
-}
-
-/* 왼쪽 화살표 */
-.prev2 {
-  left: 10px;   /* 🔥 슬라이드 밖으로 */
-}
-
-/* 오른쪽 화살표 */
-.next2 {
-  right: 10px;  /* 🔥 슬라이드 밖으로 */
-}
-
-
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/*앱,웹 화살표 호버 추가*/
-/* On hover, add a black background color with a little bit see-through */
-.prev1:hover, .next1:hover {
-  background-color: rgba(62, 62, 62, 0.8);
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev2:hover, .next2:hover {
-  background-color: rgba(62, 62, 62, 0.8);
-}
-
-
-/* Caption text */
+/* caption / number / dots */
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -132,7 +33,6 @@ section#content {
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -141,7 +41,6 @@ section#content {
   top: 0;
 }
 
-/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -157,50 +56,150 @@ section#content {
   background-color: #717171;
 }
 
-/* Fading animation */
+/* fade */
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+  animation: fade 1.5s;
 }
-
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from { opacity: .4; }
+  to   { opacity: 1; }
 }
 
+/* =========================================
+   2) Arrows
+   - 기본(prev/next)
+   - btn1 그룹(prev1/next1)
+   - btn2 그룹(prev2/next2)
+   ========================================= */
 
+/* 기본 prev/next */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
 
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
 
-/*추가*/
-/* ===== 앱/웹 그리드 반응형 ===== */
-:root{
-  --icon: 220px;   /* 기본 아이콘 크기 (PC) */
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* btn1 + btn2 공통 스타일 */
+.prev1, .next1,
+.prev2, .next2 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  padding: 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1;
+
+  transition: 0.3s ease;
+  user-select: none;
+  z-index: 10;
+}
+
+/* btn1 위치 */
+.prev1 { left: 10px; }
+.next1 { right: 10px; }
+
+/* btn2 위치 */
+.prev2 { left: 10px; }
+.next2 { right: 10px; }
+
+/* btn1 hover */
+.prev1:hover, .next1:hover {
+  background-color: rgba(62, 62, 62, 0.8);
+}
+
+/* btn2 hover */
+.prev2:hover, .next2:hover {
+  background-color: rgba(62, 62, 62, 0.8);
+}
+
+/* 모바일에서 btn1/btn2 화살표 축소 */
+@media (max-width: 768px) {
+  .prev1, .next1, .prev2, .next2 {
+    font-size: 26px;
+    padding: 12px;
+  }
+  .prev1, .prev2 { left: 6px; }
+  .next1, .next2 { right: 6px; }
+}
+
+/* =========================================
+   3) Hero Slider (1920x600 비율 유지)
+   ========================================= */
+.slideshow-container.heroSlider {
+  width: 100%;
+  aspect-ratio: 1920 / 600;
+  max-height: 560px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .slideshow-container.heroSlider {
+    min-height: 220px; /* 취향대로 조절 */
+  }
+}
+
+.slideshow-container.heroSlider .mySlides {
+  height: 100%;
+}
+.slideshow-container.heroSlider .mySlides img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+}
+
+/* =========================================
+   4) App/Web Grid (#appGrid / #appGrid2)
+   ========================================= */
+:root {
+  --icon: 220px;
   --gap: 20px;
 }
 
-/* 기존 inline-grid + repeat(5, 고정) 제거하고 grid로 */
-#appGrid, #appGrid2{
+#appGrid, #appGrid2 {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr)); /* PC 기본: 5열 고정(=2줄로 보여주기 쉬움) */
+  grid-template-columns: repeat(5, minmax(0, 1fr)); /* PC 5열 */
   gap: var(--gap);
-  width: min(1200px, 100%);   /* 가운데 정렬 + 최대폭 제한 */
+
+  width: min(1200px, 100%);
   margin: 0 auto;
-  padding: 0 16px;            /* 양옆 여백 */
+  padding: 0 16px;
   align-items: start;
 }
 
-.mySlides1, .mySlides2{
+.mySlides1, .mySlides2 {
   text-align: center;
 }
 
-/* 아이템 */
-.item{
+.item {
   text-align: center;
   min-width: 0;
 }
 
-/* 동그라미(네가 40%로 둔 것 유지 가능) */
-.item .circle{
+.item .circle {
   width: 100%;
   max-width: var(--icon);
   aspect-ratio: 1 / 1;
@@ -209,150 +208,101 @@ section#content {
   margin: 0 auto;
 }
 
-.item img{
+.item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display:block;
+  display: block;
 }
 
-/* 이름 텍스트가 길어서 레이아웃 깨지는 것 방지 */
-.item .name{
+.item .name {
   display: -webkit-box;
-  -webkit-line-clamp: 2;      /* 최대 2줄까지만 */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word;
+
   margin-top: 10px;
   font-size: 14px;
   line-height: 1.35;
 }
 
-/* ===== 브레이크포인트: 아이콘 크기/열 수 자연스럽게 줄이기 ===== */
-@media (max-width: 1024px){
-  :root{ --icon: 180px; --gap: 16px; }
-}
+/* 아이콘/간격 반응형 */
+@media (max-width: 1024px) {
+  :root { --icon: 180px; --gap: 16px; }
 
-@media (max-width: 768px){
-  :root{ --icon: 140px; --gap: 14px; }
-
-  .prev1, .next1, .prev2, .next2{
-    font-size: 26px;
-    padding: 12px;
-  }
-  .prev1, .prev2{ left: 6px; }
-  .next1, .next2{ right: 6px; }
-
-}
-
-@media (max-width: 480px){
-  :root{ --icon: 110px; --gap: 12px; }
-}
-
-/* 태블릿 이하: 자동 */
-@media (max-width: 1024px){
-  #appGrid, #appGrid2{
-    /*grid-template-columns: repeat(auto-fit, minmax(var(--icon), 1fr));*/
+  #appGrid, #appGrid2 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-
-
-
-/* Contact us 4개를 grid로: 4열 -> 2열 -> 1열 */
-.contactGrid{
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  align-items: stretch;
+@media (max-width: 768px) {
+  :root { --icon: 140px; --gap: 14px; }
+}
+@media (max-width: 480px) {
+  :root { --icon: 110px; --gap: 12px; }
 }
 
-/* inline style로 float/width 줬어도 강제로 무력화 */
-.contactGrid > section{
-  float: none !important;
-  width: auto !important;
+/* =========================================
+   5) ContactGrid (PC 1줄=4열 / 900↓ 2열 / 360↓ 1열)
+   - 중복 제거: 이 블록 하나만 유지
+   - 가운데 정렬 + 모바일 왼쪽패딩 문제 방지
+   ========================================= */
+
+/* contactGrid 기본 */
+.contactGrid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important; /* ✅ PC 4열 */
+  gap: 16px !important; /* ✅ 간격 조금 좁힘 */
+
+  /* ✅ 가운데 정렬 */
+  width: min(900px, 100%) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  justify-content: center !important;
+  align-content: start !important;
+}
+
+/* 템플릿이 모바일에서 .row > * padding-left:2.5em 주는 걸 contactGrid 내부에서 차단 */
+.contactGrid > * {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   min-width: 0;
   text-align: center;
+  float: none !important; /* 혹시 남아있으면 제거 */
+  width: auto !important; /* 섹션 width 강제값 제거 */
 }
 
-/* 아이콘 아래 텍스트 정리 */
-.contactGrid p{
-  margin: 10px 0 0;
-  font-size: 14px;
-}
-
-.contactGrid h5{
-  margin: 6px 0 0;
-  font-size: 16px;
-}
-
-/* 글이 길어서 세로로 늘어지는 문제: 줄수 제한(선택) */
-.contactGrid h6{
+/* 텍스트 간격 정리 */
+.contactGrid p { margin: 10px 0 0; font-size: 14px; }
+.contactGrid h5 { margin: 6px 0 0; font-size: 16px; }
+.contactGrid h6 {
   margin: 6px 0 0;
   font-size: 12px;
   line-height: 1.35;
   opacity: 0.75;
 
-  /* 글 길어져도 카드 높이 폭발 방지 */
   display: -webkit-box;
-  -webkit-line-clamp: 2;   /* 최대 2줄 */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word;
 }
 
-.contactGrid p, .contactGrid h5{
-  margin: 8px 0 0;
-  word-break: break-word;
-}
-
-#main .box.alt .row.gtr-uniform.contactGrid{
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0,1fr)) !important;
-  gap: 24px !important;
-}
-
-/* 태블릿: 2열 */
-@media (max-width: 900px){
-  .contactGrid{ grid-template-columns: repeat(2, 1fr); }
-}
-
-/* 모바일: 1열 */
-@media (max-width: 520px){
-  .contactGrid{ grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 900px){
-  #main .box.alt .row.gtr-uniform.contactGrid{
-    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+/* 900px 이하 2열(2x2) */
+@media (max-width: 900px) {
+  .contactGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: min(560px, 100%) !important;
   }
 }
 
-
-/* ===== 최상단 히어로: 1920x600 비율(=3.2:1) 유지 ===== */
-.slideshow-container.heroSlider{
-  width: 100%;
-  aspect-ratio: 1920 / 600;   /* 핵심: 화면이 줄어도 비율 유지 */
-  max-height: 560px;          /* PC에서 너무 커지면 제한 */
-  overflow: hidden;
-  position: relative;
-}
-
-/* 모바일에서 너무 낮아지는 것만 방지 (최소 높이 "적당히") */
-@media (max-width: 480px){
-  .slideshow-container.heroSlider{
-    min-height: 220px;        /* 여기 수치만 취향대로 조절 */
+/* 아주 작은 폰 1열 */
+@media (max-width: 360px) {
+  .contactGrid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
   }
 }
-
-.slideshow-container.heroSlider .mySlides{
-  height: 100%;
-}
-
-.slideshow-container.heroSlider .mySlides img{
-  width: 100% !important;
-  height: 100% !important;    /* 인라인 height:auto 무력화 */
-  object-fit: cover !important;
-  display: block;
-}
-
