@@ -3455,7 +3455,7 @@ input, select, textarea {
     #banner {
     		background-attachment: fixed;
     		background-color: #272833;
-			background-image: url("largemain1.gif");
+			background-image: url("forGit/largemain1.mp4");
     		background-position: center center;
     		background-size: cover;
     		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
@@ -4313,4 +4313,5 @@ input, select, textarea {
     font-size: 1em; /* 아이콘 자체 크기 */
   }
 }
+
 
