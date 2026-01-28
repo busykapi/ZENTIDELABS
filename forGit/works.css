@@ -166,7 +166,7 @@ section#content {
 }
 .slideshow-container.heroSlider .mySlides img {
   width: 100% !important;
-  height: 100% !important;
+  height: 92% !important;
   object-fit: cover !important;
   display: block;
 }
@@ -326,6 +326,7 @@ section#content {
     margin: 1.5em 0;
   }
 }
+
 
 
 
