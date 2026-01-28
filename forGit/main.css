@@ -4248,4 +4248,37 @@ input, select, textarea {
   .only-mobile{ display:none !important; }
 }
 
+/* =========================
+   Index Contact → PC 4열 / 모바일 2x2
+   ========================= */
+
+/* PC 기본: 4개 한 줄 */
+#four .contactGrid{
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 20px;
+
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 0;
+
+  justify-content: center;
+}
+
+/* row 기본 padding 때문에 쏠리는 것 방지 */
+#four .contactGrid > *{
+  padding: 0 !important;
+  width: auto !important;
+  float: none !important;
+  text-align: center;
+}
+
+/* 태블릿 & 모바일: 2x2 */
+@media (max-width: 768px){
+  #four .contactGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px;
+  }
+}
+
 
