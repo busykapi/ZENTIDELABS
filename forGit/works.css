@@ -311,10 +311,19 @@ section#content {
 /* ===============================
    모바일에서 <br> 간격 줄이기
    =============================== */
+.section-title {
+  text-align: center;
+  margin-bottom: 5em;
+}
+
 @media (max-width: 768px) {
-  br {
-    display: none;
+  .section-title {
+    margin-bottom: 3em;
+  }
+  hr {
+    margin: 1.5em 0;
   }
 }
+
 
 
