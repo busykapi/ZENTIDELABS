@@ -4130,23 +4130,20 @@ input, select, textarea {
 
 /*틀*/
 .detailScreen {
-	display: flex;     /* ⭐ 좌우 분할 */
-	width: 100%;
-	/*height: 100vh;*/
+ 	margin-top: 1.5em;
 }
 
-/* 왼쪽 */
-.detailLeft {
-	width: 50%;
-	/*border-right: 1px solid rgba(255,255,255,0.2);*/
-	/*padding: 80px;*/
+.detailScreen .ko{
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.6em;
 }
 
-/* 오른쪽 */
-.detailRight {
-	width: 50%;
-	/*padding: 80px;*/
+/* 모바일에서 패딩/글자 조금 더 최적화 */
+@media screen and (max-width: 736px){
+  .detailScreen .ko{ font-size: 0.8rem; }
 }
+
 
 /*이미지 그리드*/
 .image-grid {
@@ -4345,5 +4342,6 @@ input, select, textarea {
 .goto-next:before{
   top: 80% !important;
 }
+
 
 
