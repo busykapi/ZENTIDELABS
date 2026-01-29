@@ -3455,7 +3455,6 @@ input, select, textarea {
     #banner {
     		background-attachment: fixed;
     		background-color: #272833;
-			background-image: url("forGit/largemain1.mp4");
     		background-position: center center;
     		background-size: cover;
     		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
@@ -3463,7 +3462,19 @@ input, select, textarea {
     		position: relative;
     		text-align: center;
     		z-index: 21;
+			overflow: hidden;
     	}
+
+	
+	/* 배경 비디오 */
+	#banner .banner-bg{
+	  position: absolute;
+	  inset: 0;
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  z-index: 0;
+	}
 
     		#banner:before {
     			content: '';
@@ -4313,5 +4324,6 @@ input, select, textarea {
     font-size: 1em; /* 아이콘 자체 크기 */
   }
 }
+
 
 
