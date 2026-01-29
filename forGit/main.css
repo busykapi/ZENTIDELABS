@@ -4127,10 +4127,9 @@ input, select, textarea {
 	}
 
 /* 추가 사용자정의 */
-
 /*틀*/
 .detailScreen {
- 	margin-top: 1em;
+ 	margin-top: 0em;
 }
 
 .detailScreen .ko{
@@ -4145,7 +4144,7 @@ input, select, textarea {
 	display: grid;
 	grid-template-columns: 1fr 1fr; /* 좌우 2칸 */
 	gap: 5px;
-	margin-top: 20px;
+	margin-bottom: 30px;
 }
 
 /*이미지 박스*/
@@ -4337,6 +4336,7 @@ input, select, textarea {
 .goto-next:before{
   top: 80% !important;
 }
+
 
 
 
