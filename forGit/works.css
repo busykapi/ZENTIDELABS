@@ -392,7 +392,7 @@ section#content {
 @media screen and (max-width:980px){
 	#footer .copyright{display:flex;flex-direction:column;gap:10px;align-items:center}
   	#footer .line1{font-size:.95rem;opacity:.9}
-  	#footer .line2{font-size:.75rem;opacity:.65;text-align:center;line-height:1.4;padding:0 12px}
+  	#footer .line2{font-size:.75rem;opacity:.65;text-align:center;line-height:1.4;padding:0 12px;flex-wrap: nowrap !important;/* 줄바꿈 금지 */ white-space: nowrap !important; /* 줄바꿈 금지 */}
   	#footer .icons a{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;margin:0 14px}
 
 	 /* ===== Footer 상단은 붙이고, 하단만 여유 ===== */
@@ -402,6 +402,7 @@ section#content {
 	  margin-top: 0 !important;
 	}
 }
+
 
 
 
