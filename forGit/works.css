@@ -144,10 +144,11 @@ section#content {
 
 
 /* 모바일에서 btn1/btn2 화살표 축소 */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .prev1, .next1, .prev2, .next2 {
     font-size: 26px;
     padding: 1px;
+	top: 48%;
   }
   .prev1, .prev2 { left: -15px; }
   .next1, .next2 { right: -15px; }
