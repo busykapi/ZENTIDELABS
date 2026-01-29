@@ -4325,5 +4325,29 @@ input, select, textarea {
   }
 }
 
+@media screen and (max-width: 980px) {
+  /* Next 글자 보이게 */
+  .goto-next{
+    text-indent: 0 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  /* 화살표(배경이미지)랑 글자 같이 보이게: 글자는 아래로 */
+  .goto-next:before{
+    top: 80% !important;
+  }
+
+  .goto-next{
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* ← 이게 br 역할(간격) */
+  }
+}
 
 
