@@ -162,6 +162,24 @@ function renderApps2() {
 }
 
 
+ /*app리스트 404 방지*/
+function showComingSoon(e){
+  e.preventDefault();
+  alert("서비스 준비중입니다.\n곧 찾아뵙겠습니다.");
+}
+
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("a.item");
+  if (!a) return;
+
+  // detail.html로 가는 링크만 막기
+  if (a.getAttribute("href")?.startsWith("detail.html")) {
+    showComingSoon(e);
+  }
+});
+
+
+
 // 슬라이드 화살표랑 연결
 function nextPage() {
   const totalPages = Math.ceil(apps.length / getPageSize());
@@ -216,6 +234,7 @@ window.addEventListener("resize", () => {
     renderApps2();
   }, 150);
 });
+
 
 
 
