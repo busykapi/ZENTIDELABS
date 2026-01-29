@@ -253,7 +253,8 @@ section#content {
 }
 
 /* =========================================
-   5) ContactGrid (PC 1줄=4열 / 900↓ 2열 / 360↓ 1열)
+   5) ContactGrid (PC 1줄=4열 / 900↓ 2열 / 360↓ 1열) 
+   -> 수정 (PC 1줄=4열 / 370↓ 2열) 
    - 중복 제거: 이 블록 하나만 유지
    - 가운데 정렬 + 모바일 왼쪽패딩 문제 방지
    ========================================= */
@@ -301,21 +302,14 @@ section#content {
   word-break: break-word;
 }
 
-/* 900px 이하 2열(2x2) */
-@media (max-width: 900px) {
+/* 370px 이하 2열(2x2) */
+@media (max-width: 370px) {
   .contactGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     width: min(560px, 100%) !important;
   }
 }
 
-/* 아주 작은 폰 1열 */
-@media (max-width: 360px) {
-  .contactGrid {
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-  }
-}
 
 
 /* ===============================
@@ -412,6 +406,7 @@ section#content {
 	  margin-top: 0 !important;
 	}
 }
+
 
 
 
