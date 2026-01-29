@@ -102,7 +102,7 @@ section#content {
 .prev2, .next2 {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
 
   padding: 20px;
@@ -133,6 +133,15 @@ section#content {
 .prev2:hover, .next2:hover {
   background-color: rgba(62, 62, 62, 0.8);
 }
+
+
+/* 슬라이드 화살표 공통 */
+.slideshow-container .prev2,
+.slideshow-container .next2{
+  top: 58%;
+  transform: translateY(-50%);
+}
+
 
 /* 모바일에서 btn1/btn2 화살표 축소 */
 @media (max-width: 768px) {
@@ -402,6 +411,7 @@ section#content {
 	  margin-top: 0 !important;
 	}
 }
+
 
 
 
