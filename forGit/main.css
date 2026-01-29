@@ -4338,6 +4338,17 @@ input, select, textarea {
 }
 
 
+/* =========================
+   Footer Copyright 수정
+   ========================= */
+@media screen and (max-width:980px){
+  #footer .copyright{display:flex;flex-direction:column;gap:10px;align-items:center}
+  #footer .line1{font-size:.95rem;opacity:.9}
+  #footer .dot{margin:0 6px;opacity:.7}
+  #footer .line2{font-size:.75rem;opacity:.65;text-align:center;line-height:1.4;padding:0 12px}
+  #footer .icons a{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;margin:0 14px}
+}
+
 
 
 
