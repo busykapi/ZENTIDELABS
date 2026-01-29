@@ -4130,18 +4130,13 @@ input, select, textarea {
 
 /*틀*/
 .detailScreen {
- 	margin-top: 1.5em;
+ 	margin-top: 1em;
 }
 
 .detailScreen .ko{
   font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 1.6em;
-}
-
-/* 모바일에서 패딩/글자 조금 더 최적화 */
-@media screen and (max-width: 736px){
-  .detailScreen .ko{ font-size: 0.8rem; }
+  line-height: 1.5;
+  margin-bottom: 0em;
 }
 
 
@@ -4342,6 +4337,7 @@ input, select, textarea {
 .goto-next:before{
   top: 80% !important;
 }
+
 
 
 
