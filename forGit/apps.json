@@ -1,5 +1,5 @@
 [
-  { "id": "app001", "name": "App 001", "icon": "forGit/zentide_notService.png", "comingSoon": "true" },
+  { "id": "app001", "name": "App 001", "icon": "forGit/zentide_notService.png" },
   { "id": "app002", "name": "App 002", "icon": "forGit/zentide_notService.png" },
   { "id": "app003", "name": "App 003", "icon": "forGit/zentide_notService.png" },
   { "id": "app004", "name": "App 004", "icon": "forGit/zentide_notService.png" },
@@ -21,6 +21,7 @@
   { "id": "app020", "name": "App 020", "icon": "forGit/zentide_notService.png" },
   { "id": "app021", "name": "App 021", "icon": "forGit/zentide_notService.png" }
 ]
+
 
 
 
