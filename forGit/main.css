@@ -4369,3 +4369,16 @@ input, select, textarea {
 
 
 
+/* ===== Footer copyright 들여쓰기 완전 제거 ===== */
+#footer ul.copyright li{
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-indent: 0 !important;
+  border-left: 0 !important;
+}
+
+/* 혹시 ::before 로 밀고 있으면 이것도 같이 제거 */
+#footer ul.copyright li::before{
+  content: none !important;
+  display: none !important;
+}
