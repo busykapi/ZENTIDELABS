@@ -190,6 +190,28 @@
 		    <script src="forGit/breakpoints.min.js"></script>
 		    <script src="forGit/util.js"></script>
 		    <script src="forGit/main.js"></script>
+			<script>
+			  window.addEventListener('DOMContentLoaded', () => {
+			    const v = document.getElementById('bgVideo');
+			    if (!v) return;
+			
+			    const tryPlay = () => {
+			      const p = v.play();
+			      if (p && typeof p.catch === 'function') p.catch(() => {});
+			    };
+			
+			    // 최초 시도
+			    tryPlay();
+			
+			    // 탭 복귀/화면 전환 시 다시 시도
+			    document.addEventListener('visibilitychange', () => {
+			      if (!document.hidden) tryPlay();
+			    });
+			
+			    // 사용자가 한번이라도 터치하면 그 뒤로 재생이 더 잘 풀리는 폰들이 있음
+			    window.addEventListener('touchstart', tryPlay, { once: true });
+			  });
+			</script>
 		</body>
 		
 </html>
