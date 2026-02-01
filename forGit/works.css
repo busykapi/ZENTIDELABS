@@ -423,5 +423,47 @@ section#content {
 }
 
 
+/* 전체 박스*/
+.contactBox{
+  text-align:center;
+}
+
+/* ======= Row 1: Store badges ======= */
+.storeRow{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;          /* 화면 좁으면 자동 줄바꿈 */
+  margin-bottom:26px;      /* 배지 row와 아이콘 row 사이 간격 */
+}
+
+.storeBadge{
+  height:60px;             /* 배지 크기 유지 */
+  width:auto;
+  display:block;
+}
+
+/* ======= Row 2: Contact icons ======= */
+.iconRow{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:28px;                /* 아이콘 사이 간격 */
+}
+
+.iconRow .contactItem{
+  /* 배지랑 다르게 아이콘 카드로만 적용하고 싶으면 여기서 조절 */
+	transform: scale(0.82);
+}
+
+/* 모바일에서 아이콘이 너무 빡빡하면 살짝 줄바꿈 허용 */
+@media (max-width: 480px){
+  .storeBadge{ height:60x; }  /* 모바일에서 더 탭하기 좋게 */
+  .iconRow{
+    gap:0px;
+    flex-wrap:wrap;
+  }
+}
 
 
