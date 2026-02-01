@@ -4435,7 +4435,7 @@ input, select, textarea {
 
 /* 모바일에서 아이콘이 너무 빡빡하면 살짝 줄바꿈 허용 */
 @media (max-width: 480px){
-  .storeBadge{ height:60x; }  /* 모바일에서 더 탭하기 좋게 */
+  .storeBadge{ height:60px; }  /* 모바일에서 더 탭하기 좋게 */
   .iconRow{
     gap:0px;
     flex-wrap:wrap;
@@ -4456,5 +4456,6 @@ input, select, textarea {
 	}
 	
 }
+
 
 
