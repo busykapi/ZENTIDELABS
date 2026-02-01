@@ -2477,7 +2477,7 @@ input, select, textarea {
 			cursor: default;
 			display: inline-block;
 			height: 6em;
-			line-height: 5.65em;
+			line-height: 6em;
 			margin: 0 0 2em 0;
 			text-align: center;
 			width: 6em;
@@ -4430,7 +4430,7 @@ input, select, textarea {
 
 .iconRow .contactItem{
   /* 배지랑 다르게 아이콘 카드로만 적용하고 싶으면 여기서 조절 */
-	transform: scale(0.82);
+	transform: scale(0.92);
 }
 
 /* 모바일에서 아이콘이 너무 빡빡하면 살짝 줄바꿈 허용 */
@@ -4440,6 +4440,21 @@ input, select, textarea {
     gap:0px;
     flex-wrap:wrap;
   }
+}
+
+
+@media (max-width: 467px){
+	/* === Contact 아이콘 원 크기 확실히 줄이기 === */
+	.iconRow .icon.major{
+	  width: 4.2em !important;
+	  height: 4.2em !important;
+	  line-height: 5.2em !important;
+	}
+	
+	.iconRow .icon.major:before{
+	  font-size: 2.25em !important; /* 아이콘 glyph 크기 */
+	}
+	
 }
 
 
