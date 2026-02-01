@@ -165,7 +165,7 @@ section#content {
   position: relative;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
   .slideshow-container.heroSlider {
     min-height: 220px; /* 취향대로 조절 */
   }
@@ -179,6 +179,12 @@ section#content {
   height: 92% !important;
   object-fit: cover !important;
   display: block;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .slideshow-container.heroSlider .mySlides img{
+    height: 100% !important;
+  }
 }
 
 /* =========================================
@@ -406,6 +412,7 @@ section#content {
 	  margin-top: 0 !important;
 	}
 }
+
 
 
 
