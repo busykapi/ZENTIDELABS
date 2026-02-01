@@ -414,7 +414,13 @@ section#content {
 }
 
 
+#footer .copyright{
+  line-height: 1.4;          /* 전체 줄간격 안정화 */
+}
 
+#footer .copyright .line2{
+  margin-top: 6px;           /* 첫줄-둘째줄 사이 간격만 살짝늘림 */
+}
 
 
 
