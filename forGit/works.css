@@ -454,16 +454,30 @@ section#content {
 
 .iconRow .contactItem{
   /* 배지랑 다르게 아이콘 카드로만 적용하고 싶으면 여기서 조절 */
-	transform: scale(0.82);
+	transform: scale(0.92);
 }
 
 /* 모바일에서 아이콘이 너무 빡빡하면 살짝 줄바꿈 허용 */
-@media (max-width: 480px){
-  .storeBadge{ height:60x; }  /* 모바일에서 더 탭하기 좋게 */
+@media (max-width: 491px){
+  .storeBadge{ height:60px; }  /* 모바일에서 더 탭하기 좋게 */
   .iconRow{
     gap:0px;
     flex-wrap:wrap;
   }
+
+	/* === Contact 아이콘 원 크기 확실히 줄이기 === */
+	.iconRow .icon.major{
+	  width: 4.2em !important;
+	  height: 4.2em !important;
+	  line-height: 5.2em !important;
+	}
+	
+	.iconRow .icon.major:before{
+	  font-size: 2.25em !important; /* 아이콘 glyph 크기 */
+	}
 }
+
+
+
 
 
