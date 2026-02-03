@@ -167,8 +167,17 @@ section#content {
 
 @media (max-width: 900px) {
   .slideshow-container.heroSlider {
-    min-height: 220px; /* 취향대로 조절 */
+    min-height: 320px; /* 취향대로 조절 */
   }
+/* 이미지만 확대 */
+	.slideshow-container.heroSlider .imgWrap{
+	  width: 100%;
+	  height: 100%;
+	  display: flex;
+	  
+	  justify-content: center;
+	  transform: scale(1.3);     /* 여기만 확대 */
+	}	
 }
 
 .slideshow-container.heroSlider .mySlides {
@@ -177,7 +186,7 @@ section#content {
 .slideshow-container.heroSlider .mySlides img {
   width: 100% !important;
   height: 92% !important;
-  object-fit: cover !important;
+  
   display: block;
 }
 
@@ -494,6 +503,7 @@ section#content {
 	  font-size: 2.25em !important; /* 아이콘 glyph 크기 */
 	}
 }
+
 
 
 
