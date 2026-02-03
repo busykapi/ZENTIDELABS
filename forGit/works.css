@@ -198,7 +198,7 @@ section#content {
   }
 
   .slideshow-container.heroSlider .mySlides img {
-    height: 100% !important;
+    height: 92% !important;
     width: 100% !important;
     object-fit: cover;
   }
@@ -494,6 +494,7 @@ section#content {
 	  font-size: 2.25em !important; /* 아이콘 glyph 크기 */
 	}
 }
+
 
 
 
