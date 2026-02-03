@@ -181,11 +181,29 @@ section#content {
   display: block;
 }
 
+/* =========================
+   iOS Safari 전용 Hero Slider 보정
+   ========================= */
 @supports (-webkit-touch-callout: none) {
-  .slideshow-container.heroSlider .mySlides img{
+
+  .slideshow-container.heroSlider {
+    /* aspect-ratio 무시하고 직접 계산 */
+    height: calc(100vw * 600 / 1920);
+    max-height: 560px;
+    min-height: 220px;
+  }
+
+  .slideshow-container.heroSlider .mySlides {
+    height: 100%;
+  }
+
+  .slideshow-container.heroSlider .mySlides img {
     height: 100% !important;
+    width: 100% !important;
+    object-fit: cover;
   }
 }
+
 
 /* =========================================
    4) App/Web Grid (#appGrid / #appGrid2)
@@ -476,6 +494,7 @@ section#content {
 	  font-size: 2.25em !important; /* 아이콘 glyph 크기 */
 	}
 }
+
 
 
 
