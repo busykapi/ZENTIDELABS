@@ -159,8 +159,9 @@ section#content {
    ========================================= */
 .slideshow-container.heroSlider {
   width: 100%;
-  aspect-ratio: 1920 / 600;
-  max-height: 560px;
+  aspect-ratio: 1920 / 800;
+  min-height: 520px;
+  max-height: 660px;
   overflow: hidden;
   position: relative;
 }
@@ -524,6 +525,7 @@ section#content {
 	  font-size: 2.25em !important; /* 아이콘 glyph 크기 */
 	}
 }
+
 
 
 
