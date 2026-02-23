@@ -4475,5 +4475,46 @@ input, select, textarea {
 }
 
 
+/* ===== Floating Top Arrow ===== */
+.float-top{
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 99999;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+
+  transition: all .25s ease;
+}
+
+/* 나타날 때 */
+.float-top.show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.float-top:hover{
+  
+  transform: translateY(-2px);
+}
+
+.float-top img{
+  width: 50px;
+  height: 50px;
+}
+
+
 
 
