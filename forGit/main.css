@@ -3783,6 +3783,32 @@ input, select, textarea {
 
 	@media screen and (max-width: 736px) {
 
+		/*모바일 헤더*/
+		  body.landing #titleBar{
+		    position: absolute;
+		    top:0; left:0; width:100%;
+		    background: transparent;
+		    box-shadow: none;
+		    z-index: 10002;
+		  }
+		
+		  body.landing #page-wrapper{
+		    padding-top: 0 !important;
+		  }
+		
+		  /* 잘림 방지 */
+		  body.landing #banner{
+		    min-height: 100vh !important;
+		  }
+		  body.landing #banner:before{
+		    height: 100vh !important;
+		  }
+		
+		  /* 타이틀 텍스트 제거 */
+		  body.landing #titleBar .title{
+		    display:none;
+		  }
+
 		/* Basic */
 
 			html, body {
