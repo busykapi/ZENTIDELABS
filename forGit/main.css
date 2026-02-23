@@ -551,6 +551,23 @@ input, select, textarea {
 		text-decoration: none;
 	}
 
+		/* 메인(landing)에서만: 헤더를 배너 위에 얹기 */
+		body.landing #banner { position: relative; } /* 기준 */
+		body.landing #header{
+		  position: absolute !important;
+		  top: 0; left: 0;
+		  width: 100%;
+		  background: transparent !important;
+		  box-shadow: none !important;
+		  z-index: 30; /* banner(21)보다 위 */
+		}
+		
+		/* 글자 안 보이면 흰색 보장 */
+		body.landing #header a,
+		body.landing #header #logo a{
+		  color: rgba(255,255,255,0.95) !important;
+		}
+
 		body.landing:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
@@ -4456,6 +4473,7 @@ input, select, textarea {
 	}
 	
 }
+
 
 
 
