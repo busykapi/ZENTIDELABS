@@ -207,28 +207,36 @@
 		    <script src="forGit/breakpoints.min.js"></script>
 		    <script src="forGit/util.js"></script>
 		    <script src="forGit/main.js"></script>
+			
+
 			<script>
-			  window.addEventListener('DOMContentLoaded', () => {
-			    const v = document.getElementById('bgVideo');
-			    if (!v) return;
+			document.addEventListener("DOMContentLoaded", () => {
+			  const v = document.querySelector("#banner video, #banner .banner-bg, #banner .bg-video");
+			  if (!v) return;
 			
-			    const tryPlay = () => {
-			      const p = v.play();
-			      if (p && typeof p.catch === 'function') p.catch(() => {});
-			    };
-			
-			    // 최초 시도
-			    tryPlay();
-			
-			    // 탭 복귀/화면 전환 시 다시 시도
-			    document.addEventListener('visibilitychange', () => {
-			      if (!document.hidden) tryPlay();
+			  // autoplay 실패 대비
+			  const tryPlay = () => {
+			    v.muted = true;           // 혹시라도
+			    v.playsInline = true;
+			    const p = v.play();
+			    if (p && p.catch) p.catch(() => {
+			      // 자동재생 실패하면, 첫 터치/스크롤에 재시도
+			      const resume = () => {
+			        v.play().catch(()=>{});
+			        window.removeEventListener("touchstart", resume);
+			        window.removeEventListener("click", resume);
+			        window.removeEventListener("scroll", resume);
+			      };
+			      window.addEventListener("touchstart", resume, { once: true, passive:true });
+			      window.addEventListener("click", resume, { once: true });
+			      window.addEventListener("scroll", resume, { once: true, passive:true });
 			    });
+			  };
 			
-			    // 사용자가 한번이라도 터치하면 그 뒤로 재생이 더 잘 풀리는 폰들이 있음
-			    window.addEventListener('touchstart', tryPlay, { once: true });
-			  });
+			  tryPlay();
+			});
 			</script>
+			
 			<a href="#page-wrapper" class="float-top show" aria-label="맨 위로">
 			  <img src="forGit/arrow-up.svg" alt="Top">
 			</a>
