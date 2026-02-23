@@ -4381,6 +4381,7 @@ input, select, textarea {
   color: rgba(255,255,255,0.85);
   font-size: 0.9rem;
   line-height: 1;
+  bottom: 2.5rem !important;
 }
 
 /* 화살표(배경이미지)랑 글자 같이 보이게: 글자는 아래로 */
@@ -4566,6 +4567,7 @@ input, select, textarea {
   -webkit-animation: spotArrowDown 0.6s ease-in-out infinite alternate;
   animation: spotArrowDown 0.6s ease-in-out infinite alternate;
 }
+
 
 
 
