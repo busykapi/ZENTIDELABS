@@ -4506,7 +4506,7 @@ input, select, textarea {
 }
 
 .float-top:hover{
-  
+  border-bottom: 0 !important;      /* 점선 밑줄 제거 */
   transform: translateY(-2px);
 }
 
@@ -4514,6 +4514,7 @@ input, select, textarea {
   width: 50px;
   height: 50px;
 }
+
 
 
 
