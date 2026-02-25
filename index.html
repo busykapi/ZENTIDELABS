@@ -70,7 +70,7 @@
 					  playsinline
 					  webkit-playsinline
 					  preload="auto">
-					  <source src="forGit/largemain1.mp4" type="video/mp4">
+					  <source src="/forGit/largemain1.mp4" type="video/mp4">
 					</video>
 					<div class="content">
 						<header>
@@ -271,6 +271,34 @@
 			
 			  tryPlay();
 			});
+
+
+			
+  window.addEventListener("load", () => {
+    const v = document.getElementById("bgVideo");
+    if (!v) return;
+
+    v.muted = true;
+    v.playsInline = true;
+
+    const tryPlay = () => v.play().catch(() => {});
+
+    // 로드 직후 1번
+    tryPlay();
+
+    // 첫 렌더 타이밍 이슈 방지로 0.3초 후 1번 더
+    setTimeout(tryPlay, 300);
+
+    // 유저가 한번이라도 터치하면 autoplay 제한 풀리는 경우 많음
+    ["touchstart", "click"].forEach(evt => {
+      document.addEventListener(evt, tryPlay, { once: true, passive: true });
+    });
+
+    // 탭 전환 후 다시 멈추는 경우
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) tryPlay();
+    });
+  });
 			</script>
 			
 			<a href="#page-wrapper" class="float-top show" aria-label="맨 위로">
