@@ -2205,7 +2205,7 @@ input, select, textarea {
 	}
 
 		header.major:after {
-			background: #e44c65;
+			background: #D7FF00;
 			content: '';
 			display: inline-block;
 			height: 0.2em;
@@ -4555,6 +4555,7 @@ input, select, textarea {
   -webkit-animation: spotArrowDown 0.6s ease-in-out infinite alternate;
   animation: spotArrowDown 0.6s ease-in-out infinite alternate;
 }
+
 
 
 
