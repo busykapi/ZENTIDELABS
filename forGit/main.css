@@ -115,11 +115,11 @@ input, select, textarea {
 		text-decoration: none;
 	}
 
-		a:hover {
+		/* a:hover {
 			color: #2F9D27 !important;
 			border-bottom-color: transparent;
             border-bottom: dotted 1px;
-		}
+		} */
 
 	strong, b {
 		color: #ffffff;
@@ -4555,6 +4555,7 @@ input, select, textarea {
   -webkit-animation: spotArrowDown 0.6s ease-in-out infinite alternate;
   animation: spotArrowDown 0.6s ease-in-out infinite alternate;
 }
+
 
 
 
