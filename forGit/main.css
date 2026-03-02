@@ -3486,13 +3486,24 @@ input, select, textarea {
 
 	
 	/* 배경 비디오 */
-	#banner .banner-bg{
+	/* #banner .banner-bg{
 	  position: absolute;
 	  inset: 0;
 	  width: 100%;
 	  height: 100%;
 	  object-fit: cover;
 	  z-index: 0;
+	} */
+
+	#banner .banner-bg{
+	  position:absolute;
+	  top:50%;
+	  left:50%;
+	  width:100%;
+	  height:100%;
+	  transform:translate(-50%,-50%);
+	  object-fit:cover;
+	  z-index:0;
 	}
 
     		#banner:before {
@@ -3515,6 +3526,8 @@ input, select, textarea {
     			position: absolute;
     			top: 0;
     			width: 100%;
+
+				pointer-events: none !important;
     		}
 
     		#banner .content {
@@ -4423,7 +4436,7 @@ input, select, textarea {
 
 #banner { position: relative; overflow: hidden; }
 
-#banner .bg-video{
+/* #banner .bg-video{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -4432,7 +4445,7 @@ input, select, textarea {
   transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: 0;
-}
+} */
 
 #banner .content{ position: relative; z-index: 1; }
 
@@ -4555,6 +4568,7 @@ input, select, textarea {
   -webkit-animation: spotArrowDown 0.6s ease-in-out infinite alternate;
   animation: spotArrowDown 0.6s ease-in-out infinite alternate;
 }
+
 
 
 
