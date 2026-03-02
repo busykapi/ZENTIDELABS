@@ -189,7 +189,7 @@
 							  <div class="iconRow">
 									<div class="contactItem">
 									  <a href="contact.html" title="Contact" aria-label="Contact">
-										<span class="icon solid alt major fa-lock"></span>
+										<span class="icon solid alt major fa-comment"></span>
 									  </a>
 									</div>
 								
@@ -271,6 +271,44 @@
 			});
 
 
+
+				
+(() => {
+  const v = document.getElementById("bgVideo");
+  if (!v) return;
+
+  // 확실히 “무음 autoplay”로 고정
+  v.muted = true;
+  v.setAttribute("muted", "");
+  v.playsInline = true;
+  v.setAttribute("playsinline", "");
+
+  const tryPlay = () => v.play().catch(() => {});
+
+  // ✅ 여러 시점에서 재시도 (이게 핵심)
+  const burst = () => {
+    tryPlay();
+    requestAnimationFrame(tryPlay);
+    setTimeout(tryPlay, 120);
+    setTimeout(tryPlay, 350);
+    setTimeout(tryPlay, 900);
+    setTimeout(tryPlay, 1800);
+  };
+
+  // 로딩/데이터 준비 타이밍 대응
+  window.addEventListener("load", burst);
+  document.addEventListener("DOMContentLoaded", burst);
+  v.addEventListener("loadeddata", burst);
+  v.addEventListener("canplay", burst);
+
+  // 탭 전환 후 멈춤 복구
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) burst();
+  });
+})();
+
+
+				
 			
   window.addEventListener("load", () => {
     const v = document.getElementById("bgVideo");
