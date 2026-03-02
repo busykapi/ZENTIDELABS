@@ -25,6 +25,9 @@ section, summary, time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;}
 
+/* 혹시 가로 스크롤 생기면 차단 */
+html, body { overflow-x: hidden; }
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
@@ -4568,6 +4571,7 @@ input, select, textarea {
   -webkit-animation: spotArrowDown 0.6s ease-in-out infinite alternate;
   animation: spotArrowDown 0.6s ease-in-out infinite alternate;
 }
+
 
 
 
