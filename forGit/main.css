@@ -3882,10 +3882,10 @@ input, select, textarea {
 					max-height: 60vh;
 				}
 
-				.spotlight .content {
+				/* .spotlight .content {
 					border-top-width: 0.2em !important;
 					padding: 3.25em 1.5em 1.25em 1.5em !important;
-				}
+				} */
 
 		/* Wrapper */
 
@@ -4584,6 +4584,7 @@ html, body { overflow-x: hidden; }
   object-fit:cover;
   z-index:0;
 }
+
 
 
 
