@@ -140,13 +140,13 @@
 	    <script src="forGit/breakpoints.min.js"></script>
 	    <script src="forGit/util.js"></script>
 	    <script src="forGit/main.js"></script>
-      <script>
-      const app=new URLSearchParams(window.location.search).get('title');
-      if(title){
-       document.getElementById('title').innerText=
-       app+' 이용약관';
-      }
-      </script>
+	    <script>
+	      const app=new URLSearchParams(window.location.search).get('title');
+	      if(app){
+	       document.getElementById('title').innerText=
+	       app+' 이용약관';
+	      }
+	    </script>
 		  <a href="#page-wrapper" class="float-top show" aria-label="맨 위로">
 			  <img src="forGit/arrow-up.svg" alt="Top">
 		  </a>
