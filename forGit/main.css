@@ -4587,6 +4587,43 @@ html, body { overflow-x: hidden; }
 
 
 
+/*약관 화면 양옆에 붙지않게 여백처리*/
+.policy-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 1280 이하 */
+@media screen and (max-width: 1280px) {
+    .policy-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* 980 이하 */
+@media screen and (max-width: 980px) {
+    .policy-content {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+/* 736 이하 */
+@media screen and (max-width: 736px) {
+    .policy-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* 480 이하 */
+@media screen and (max-width: 480px) {
+    .policy-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 
 
 
