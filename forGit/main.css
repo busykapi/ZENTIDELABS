@@ -4626,3 +4626,28 @@ html, body { overflow-x: hidden; }
 }
 
 
+
+
+/* 구글 애드센스 */
+.bottom-ad-box {
+    width: 760px;
+    max-width: calc(100% - 40px);
+
+    margin: 25px auto;
+    padding: 14px 16px 16px;
+
+    background: #20222c;
+    border: 1px solid #3a3d49;
+    border-radius: 8px;
+
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.bottom-ad-label {
+    font-size: 11px;
+    color: #777b88;
+    text-align: left;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
