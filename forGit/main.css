@@ -3722,7 +3722,8 @@ input, select, textarea {
 				} 
 
 				.spotlight .content {
-					background: rgb(23 24 32 / 78%);
+					/* background: rgb(23 24 32 / 78%); */
+					background-color: #1c1d26;
 					border-width: 0 !important;
 					border-top-width: 0.35em !important;
 					bottom: auto !important;
