@@ -4721,20 +4721,11 @@ html, body { overflow-x: hidden; }
 }
 
 .play-guide span {
-    animation: playFloat 2.5s ease-in-out infinite;
+	display: inline-block;
+    -webkit-animation: spotArrowDown 0.6s ease-in-out infinite alternate;
+  	animation: spotArrowDown 0.6s ease-in-out infinite alternate;
 }
 
-@keyframes playFloat {
-    0%, 100% {
-        transform: translateY(0);
-        opacity: 0.45;
-    }
-
-    50% {
-        transform: translateY(-7px);
-        opacity: 0.8;
-    }
-}
 
 @media (max-width: 768px) {
     #banner {
