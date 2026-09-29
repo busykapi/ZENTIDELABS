@@ -3714,15 +3714,12 @@ input, select, textarea {
 				height: auto;
 			}
 
-				/* .spotlight .image.main {
+				.spotlight .image.main {
 					display: block;
 					margin: 0;
 					max-height: 40vh;
 					overflow: hidden;
-				} */
-				.spotlight .image.main {
-				    display: none;
-				}
+				} 
 
 				.spotlight .content {
 					background: rgb(23 24 32 / 78%);
