@@ -4703,7 +4703,7 @@ html, body { overflow-x: hidden; }
     position: absolute;
     top: 90px;
 
-    left: 43%;   /* 50%보다 작을수록 왼쪽 */
+    left: 15%;   /* 50%보다 작을수록 왼쪽 */
     transform: translateX(-50%);
 
     z-index: 999;
@@ -4731,7 +4731,7 @@ html, body { overflow-x: hidden; }
         position: absolute;
 
         top: 80px;          /* ← 상단 위치 */
-        left: 43%;
+        left: 15%;
         transform: translateX(-50%);
 
         z-index: 20;
