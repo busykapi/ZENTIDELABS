@@ -3714,11 +3714,14 @@ input, select, textarea {
 				height: auto;
 			}
 
-				.spotlight .image.main {
+				/* .spotlight .image.main {
 					display: block;
 					margin: 0;
 					max-height: 40vh;
 					overflow: hidden;
+				} */
+				.spotlight .image.main {
+				    display: none;
 				}
 
 				.spotlight .content {
@@ -3749,7 +3752,7 @@ input, select, textarea {
 						}
 
 				.spotlight .goto-next {
-					display: none !important;
+					display: none;
 				}
 
 		/* Wrapper */
