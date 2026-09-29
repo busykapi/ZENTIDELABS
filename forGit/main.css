@@ -4628,26 +4628,65 @@ html, body { overflow-x: hidden; }
 
 
 
-/* 구글 애드센스 */
-.bottom-ad-box {
-    width: 760px;
-    max-width: calc(100% - 40px);
+/* =========================
+   하단 Adsense 광고
+========================= */
 
-    margin: 25px auto;
-    padding: 14px 16px 16px;
-
-    background: #20222c;
-    border: 1px solid #3a3d49;
-    border-radius: 8px;
-
-    text-align: center;
+.bottom-ad-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
+    padding: 20px 15px;
+}
+
+.bottom-ad-inner {
+    width: 728px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .bottom-ad-label {
+    width: 728px;
+    max-width: 100%;
+    margin-bottom: 6px;
     font-size: 11px;
     color: #777b88;
     text-align: left;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
+}
+
+/* PC 광고 */
+.bottom-ad {
+    width: 728px;
+    height: 90px;
+}
+
+
+/* =========================
+   모바일  Adsense 광고
+========================= */
+
+@media screen and (max-width: 736px) {
+
+    .bottom-ad-section {
+        padding: 15px 0;
+    }
+
+    .bottom-ad-inner {
+        width: 320px;
+        max-width: 100%;
+    }
+
+    .bottom-ad-label {
+        width: 320px;
+        max-width: 100%;
+        font-size: 10px;
+    }
+
+    .bottom-ad {
+        width: 320px;
+        height: 50px;
+    }
 }
