@@ -3709,16 +3709,11 @@ input, select, textarea {
 
 		/* Spotlight */
 
-			/* .spotlight {
+			.spotlight {
 				background-attachment: scroll;
-				height: auto;
-			} */
-
-				.spotlight {
-				    background-attachment: scroll;
-				    height: auto !important;
-				    min-height: 0 !important;
-				}
+				/* height: auto; */
+				 height: auto !important;
+			}
 
 				.spotlight .image.main {
 					display: block;
