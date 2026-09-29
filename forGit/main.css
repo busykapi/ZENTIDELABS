@@ -4638,9 +4638,6 @@ html, body { overflow-x: hidden; }
     justify-content: center;
     box-sizing: border-box;
     padding: 20px 15px;
-	border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 12px;
-    overflow: hidden;
 }
 
 .bottom-ad-inner {
@@ -4649,6 +4646,9 @@ html, body { overflow-x: hidden; }
     display: flex;
     flex-direction: column;
     align-items: center;
+	border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .bottom-ad-label {
