@@ -3482,6 +3482,7 @@ input, select, textarea {
     		text-align: center;
     		z-index: 21;
 			overflow: hidden;
+		position: relative; /*0930*/
     	}
 
 	
@@ -4699,7 +4700,18 @@ html, body { overflow-x: hidden; }
    영상재생
 ========================= */
 .play-guide {
-    display: none;
+     position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+
+    margin: 0;
+    padding: 0;
+
+    color: #fff;
+    font-size: 15px;
+    white-space: nowrap;
 }
 
 @media (max-width: 768px) {
