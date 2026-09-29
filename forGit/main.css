@@ -4690,3 +4690,38 @@ html, body { overflow-x: hidden; }
         height: 50px;
     }
 }
+
+
+
+
+
+/* =========================
+   영상재생
+========================= */
+.play-guide {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #banner {
+        position: relative;
+    }
+
+    .play-guide {
+        display: block;
+        position: absolute;
+
+        top: 80px;          /* ← 상단 위치 */
+        left: 50%;
+        transform: translateX(-50%);
+
+        z-index: 20;
+
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 15px;
+        font-weight: 400;
+        white-space: nowrap;
+
+        cursor: pointer;
+    }
+}
