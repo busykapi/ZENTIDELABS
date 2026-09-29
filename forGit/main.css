@@ -4647,7 +4647,6 @@ html, body { overflow-x: hidden; }
     flex-direction: column;
     align-items: center;
 	border: 1px solid #4b4d57;
-    border-radius: 12px;
     overflow: hidden;
 }
 
