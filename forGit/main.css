@@ -4626,37 +4626,3 @@ html, body { overflow-x: hidden; }
 }
 
 
-
-/* 하단 Adsense 배너 */
-.footer-ad-wrap {
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    overflow: hidden;
-}
-
-.footer-ad {
-    width: 728px;
-    height: 90px;
-}
-
-/* 모바일 */
-@media screen and (max-width: 736px) {
-    .footer-ad {
-        width: 320px;
-        height: 50px;
-    }
-
-    .footer-ad-wrap {
-        padding: 10px 0;
-    }
-}
-
-
-
-
-
-
-
-
-
