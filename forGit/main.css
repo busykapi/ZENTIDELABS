@@ -4273,21 +4273,24 @@ input, select, textarea {
 		padding: 0 12px;
 	}
 
-	/* 버튼이 옆으로 길면 아래로 떨어지게 */
 	.contact-actions {
 		flex-direction: column;
-		gap: 10px;
+		gap: 6px;
 		align-items: stretch;
+		margin-left: 0;
+		width: 100%;
 	}
 
 	.contact-actions li {
 		width: 100%;
-		padding: 0;
+		padding: 0 !important;
+		margin: 0 !important;
 	}
 
 	.contact-actions input[type="submit"],
 	.contact-actions input[type="button"] {
 		width: 100%;
+		margin: 0;
 	}
 }
 
@@ -4776,7 +4779,7 @@ html, body { overflow-x: hidden; }
 
     background-image: url("ZENTIDELABS_NO_BACKGROUND.png");
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center 130px;
     background-size: min(75vw, 900px) auto;
 
     opacity: 0.3;
@@ -4814,4 +4817,19 @@ html, body { overflow-x: hidden; }
     width: 100%;
     height: auto;
     object-fit: contain;
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+	ul.actions.contact-actions li {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	ul.actions.contact-actions li + li {
+		padding-top: 0 !important;
+		margin-top: 0 !important;
+	}
 }
