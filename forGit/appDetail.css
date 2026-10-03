@@ -1,0 +1,657 @@
+/* =========================================
+   ZENTIDE LABS - APP DETAIL
+========================================= */
+
+.app-detail-page {
+    min-height: 100vh;
+    padding: 4em 0 6em 0 !important;
+}
+
+.app-detail-container {
+    position: relative;
+    z-index: 1;
+
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   BACK
+========================================= */
+
+.back-to-works {
+    display: inline-block;
+    margin-bottom: 2.5em;
+
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9em;
+    letter-spacing: 0.08em;
+
+    border-bottom: none;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.back-to-works:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================
+   LOADING / ERROR
+========================================= */
+
+.app-message {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 1em;
+}
+
+
+/* =========================================
+   MAIN GRID
+========================================= */
+
+.app-detail {
+    display: grid;
+    grid-template-columns: 380px minmax(0, 1fr);
+
+    gap: 90px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   PREVIEW
+========================================= */
+
+.preview-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preview-label {
+    margin-bottom: 18px;
+
+    font-size: 0.72em;
+    font-weight: 600;
+
+    letter-spacing: 0.22em;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+.phone-frame {
+    position: relative;
+
+    width: 310px;
+    height: 630px;
+
+    padding: 9px;
+
+    border-radius: 44px;
+
+    background:
+            linear-gradient(
+                    145deg,
+                    #4d515b,
+                    #11141a 20%,
+                    #05070a 65%,
+                    #373b44
+            );
+
+    box-shadow:
+            0 35px 80px rgba(0, 0, 0, 0.65),
+            0 0 0 1px rgba(255, 255, 255, 0.10),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.phone-screen {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius: 36px;
+
+    background: #000;
+}
+
+
+/* 카메라 */
+.phone-camera {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 75px;
+    height: 21px;
+
+    border-radius: 20px;
+
+    background: #050505;
+
+    box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+
+/* 이미지 영역 */
+.screen-container {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    background: #080a0f;
+}
+
+.app-screen {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transform: scale(1.01);
+
+    transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+}
+
+.app-screen.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* 하단 홈바 */
+.phone-home-bar {
+    position: absolute;
+
+    z-index: 10;
+
+    bottom: 8px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 105px;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================
+   SCREEN CONTROLS
+========================================= */
+
+.screen-controls {
+    margin-top: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 17px;
+}
+
+.screen-arrow {
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #ffffff;
+
+    font-size: 15px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    transition: 0.2s ease;
+}
+
+.screen-arrow:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.screen-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+}
+
+.screen-dot {
+    width: 6px;
+    height: 6px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.22);
+
+    cursor: pointer;
+
+    box-shadow: none;
+}
+
+.screen-dot.active {
+    background: #ffffff;
+    transform: scale(1.25);
+}
+
+.screen-counter {
+    margin-top: 9px;
+
+    color: rgba(255, 255, 255, 0.35);
+
+    font-size: 0.72em;
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================
+   APP INFORMATION
+========================================= */
+
+.app-information {
+    padding-top: 37px;
+}
+
+.app-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+}
+
+.app-icon {
+    width: 92px;
+    height: 92px;
+
+    flex: 0 0 auto;
+
+    border-radius: 21px;
+
+    object-fit: cover;
+
+    background: #11151d;
+
+    box-shadow:
+            0 14px 35px rgba(0, 0, 0, 0.35),
+            0 0 0 1px rgba(255, 255, 255, 0.09);
+}
+
+.app-label {
+    margin: 0 0 6px 0;
+
+    color: rgba(255, 255, 255, 0.35);
+
+    font-size: 0.68em;
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+}
+
+#appName {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(2em, 4vw, 3.2em);
+    line-height: 1.1;
+
+    letter-spacing: -0.04em;
+}
+
+.app-subtitle {
+    margin: 8px 0 0 0;
+
+    color: rgba(255, 255, 255, 0.57);
+
+    font-size: 1em;
+}
+
+.app-description {
+    max-width: 700px;
+
+    margin: 38px 0 35px 0;
+
+    color: rgba(255, 255, 255, 0.70);
+
+    font-size: 1em;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   META
+========================================= */
+
+.app-meta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    margin-bottom: 43px;
+
+    border-top:
+            1px solid rgba(255, 255, 255, 0.10);
+
+    border-bottom:
+            1px solid rgba(255, 255, 255, 0.10);
+}
+
+.meta-item {
+    padding: 18px 20px 18px 0;
+}
+
+.meta-item span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: rgba(255, 255, 255, 0.32);
+
+    font-size: 0.64em;
+    font-weight: 600;
+
+    letter-spacing: 0.15em;
+}
+
+.meta-item strong {
+    color: rgba(255, 255, 255, 0.83);
+
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.detail-section {
+    margin-top: 35px;
+}
+
+.detail-section h2 {
+    margin: 0 0 18px 0;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 0.72em;
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* =========================================
+   TECH
+========================================= */
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.tech-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 31px;
+
+    padding: 4px 12px;
+
+    border:
+            1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    background:
+            rgba(255, 255, 255, 0.035);
+
+    color:
+            rgba(255, 255, 255, 0.72);
+
+    font-size: 0.78em;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.feature-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.feature-list li {
+    position: relative;
+
+    margin-bottom: 11px;
+
+    padding-left: 19px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    line-height: 1.6;
+}
+
+.feature-list li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 1px;
+    top: 0.7em;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================
+   STORE
+========================================= */
+
+.store-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 43px;
+}
+
+.store-button {
+    min-width: 145px;
+
+    padding: 11px 21px;
+
+    border:
+            1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 4px;
+
+    background:
+            rgba(255, 255, 255, 0.06);
+
+    color: #ffffff !important;
+
+    text-align: center;
+
+    text-decoration: none;
+    border-bottom: none;
+
+    transition: 0.2s ease;
+}
+
+.store-button:hover {
+    background:
+            rgba(255, 255, 255, 0.12);
+
+    border-color:
+            rgba(255, 255, 255, 0.32);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media screen and (max-width: 980px) {
+
+    .app-detail {
+        grid-template-columns: 320px minmax(0, 1fr);
+        gap: 45px;
+    }
+
+    .phone-frame {
+        width: 275px;
+        height: 560px;
+
+        border-radius: 39px;
+    }
+
+    .phone-screen {
+        border-radius: 31px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media screen and (max-width: 736px) {
+
+    .app-detail-page {
+        padding-top: 2em !important;
+    }
+
+    .app-detail-container {
+        width: calc(100% - 30px);
+    }
+
+    .back-to-works {
+        margin-bottom: 1.8em;
+    }
+
+    .app-detail {
+        display: block;
+    }
+
+    .phone-frame {
+        width: min(285px, 82vw);
+        height: min(580px, 167vw);
+    }
+
+    .app-information {
+        margin-top: 60px;
+        padding-top: 0;
+    }
+
+    .app-heading {
+        gap: 15px;
+    }
+
+    .app-icon {
+        width: 70px;
+        height: 70px;
+
+        border-radius: 16px;
+    }
+
+    #appName {
+        font-size: 1.8em;
+    }
+
+    .app-description {
+        margin-top: 28px;
+    }
+
+    .app-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .meta-item {
+        padding: 13px 0;
+
+        border-bottom:
+                1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .meta-item:last-child {
+        border-bottom: 0;
+    }
+
+    .store-links {
+        flex-direction: column;
+    }
+
+    .store-button {
+        width: 100%;
+    }
+
+}

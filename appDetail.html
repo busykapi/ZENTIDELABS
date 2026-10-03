@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <title>ZENTIDE LABS | App Detail</title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <link rel="stylesheet" href="forGit/main.css"/>
+    <link rel="stylesheet" href="forGit/app-detail.css"/>
+
+    <noscript>
+        <link rel="stylesheet" href="forGit/noscript.css"/>
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 id="logo">
+            <a href="index.html">ZENTIDE LABS</a>
+        </h1>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Main -->
+    <div id="main" class="wrapper style1 brand-page app-detail-page">
+
+        <div class="app-detail-container">
+
+            <!-- 뒤로가기 -->
+            <a href="works.html" class="back-to-works">
+                ← Works
+            </a>
+
+
+            <!-- 로딩 -->
+            <div id="appLoading" class="app-message">
+                Loading...
+            </div>
+
+
+            <!-- 오류 -->
+            <div id="appError" class="app-message" hidden>
+                앱 정보를 찾을 수 없습니다.
+            </div>
+
+
+            <!-- 실제 상세 -->
+            <main id="appDetail" class="app-detail" hidden>
+
+                <!-- ========================
+                     왼쪽 : 휴대폰 Preview
+                ========================= -->
+                <section class="preview-column">
+
+                    <div class="preview-label">
+                        APP PREVIEW
+                    </div>
+
+                    <div class="phone-frame">
+
+                        <div class="phone-screen">
+
+                            <div class="phone-camera"></div>
+
+                            <div id="screenContainer"
+                                 class="screen-container">
+                            </div>
+
+                            <div class="phone-home-bar"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 이미지 컨트롤 -->
+                    <div class="screen-controls">
+
+                        <button id="screenPrev"
+                                class="screen-arrow"
+                                type="button"
+                                aria-label="Previous screenshot">
+                            &#10094;
+                        </button>
+
+                        <div id="screenDots"
+                             class="screen-dots">
+                        </div>
+
+                        <button id="screenNext"
+                                class="screen-arrow"
+                                type="button"
+                                aria-label="Next screenshot">
+                            &#10095;
+                        </button>
+
+                    </div>
+
+
+                    <div class="screen-counter">
+                        <span id="screenCurrent">1</span>
+                        /
+                        <span id="screenTotal">1</span>
+                    </div>
+
+                </section>
+
+
+                <!-- ========================
+                     오른쪽 : 앱 정보
+                ========================= -->
+                <section class="app-information">
+
+                    <div class="app-heading">
+
+                        <img id="appIcon"
+                             class="app-icon"
+                             src=""
+                             alt="App icon"/>
+
+                        <div>
+                            <p class="app-label">
+                                ZENTIDE LABS PROJECT
+                            </p>
+
+                            <h1 id="appName"></h1>
+
+                            <p id="appSubTitle"
+                               class="app-subtitle">
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <p id="appDescription"
+                       class="app-description">
+                    </p>
+
+
+                    <!-- 기본 정보 -->
+                    <div class="app-meta">
+
+                        <div class="meta-item">
+                            <span>PLATFORM</span>
+                            <strong id="appPlatform">-</strong>
+                        </div>
+
+                        <div class="meta-item">
+                            <span>CATEGORY</span>
+                            <strong id="appCategory">-</strong>
+                        </div>
+
+                        <div class="meta-item">
+                            <span>STATUS</span>
+                            <strong id="appStatus">-</strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- 기술 -->
+                    <div class="detail-section">
+
+                        <h2>TECH STACK</h2>
+
+                        <div id="appTech"
+                             class="tech-list">
+                        </div>
+
+                    </div>
+
+
+                    <!-- 주요 기능 -->
+                    <div class="detail-section">
+
+                        <h2>FEATURES</h2>
+
+                        <ul id="appFeatures"
+                            class="feature-list">
+                        </ul>
+
+                    </div>
+
+
+                    <!-- 스토어 -->
+                    <div class="store-links">
+
+                        <a id="googlePlayLink"
+                           class="store-button"
+                           href="#"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           hidden>
+                            Google Play
+                        </a>
+
+                        <a id="appStoreLink"
+                           class="store-button"
+                           href="#"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           hidden>
+                            App Store
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+
+        <ul class="copyright">
+            <li>&copy; ZENTIDE LABS. All rights reserved.</li>
+        </ul>
+
+    </footer>
+
+</div>
+
+
+<!-- 기존 Landed 스크립트 -->
+<script src="forGit/jquery.min.js"></script>
+<script src="forGit/jquery.scrolly.min.js"></script>
+<script src="forGit/jquery.dropotron.min.js"></script>
+<script src="forGit/jquery.scrollex.min.js"></script>
+<script src="forGit/browser.min.js"></script>
+<script src="forGit/breakpoints.min.js"></script>
+<script src="forGit/util.js"></script>
+<script src="forGit/main.js"></script>
+
+<!-- 앱 상세 -->
+<script src="forGit/app-detail.js"></script>
+
+</body>
+</html>
