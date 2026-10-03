@@ -167,12 +167,6 @@ function renderApps2() {
 }
 
 
- /*app리스트 404 방지*/
-function showComingSoon(e){
-  e.preventDefault();
-  alert("서비스 준비중입니다.\n곧 찾아뵙겠습니다.");
-}
-
 /* 준비중 앱 클릭 방지 */
 document.addEventListener("click", (e) => {
 
