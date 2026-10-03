@@ -50,10 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             const apps = await response.json();
+            console.log("URL appId =", appId);
+            console.log("apps.json =", apps);
 
 
             currentApp =
                 apps.find(app => app.id === appId);
+            console.log("찾은 앱 =", currentApp);
 
 
             if (!currentApp) {
