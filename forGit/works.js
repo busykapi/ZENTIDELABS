@@ -134,15 +134,20 @@ function renderApps() {
   const pageApps = apps.slice(start, end);
 
   grid.innerHTML = pageApps.map(app => `
-    <a class="item" href="detail.html?id=${encodeURIComponent(app.id)}">
+    <a class="item"
+       href="${app.status === 'Released'
+         ? `app-detail.html?id=${encodeURIComponent(app.id)}`
+         : '#'}"
+       data-status="${app.status || 'Preparing'}">
+
       <div class="circle">
         <img src="${app.icon}" alt="${app.name}">
       </div>
+
       <p class="name">${app.name}</p>
     </a>
   `).join("");
 }
-
 function renderApps2() {
   if (!grid2) return;
 
@@ -168,14 +173,22 @@ function showComingSoon(e){
   alert("서비스 준비중입니다.\n곧 찾아뵙겠습니다.");
 }
 
+/* 준비중 앱 클릭 방지 */
 document.addEventListener("click", (e) => {
+
   const a = e.target.closest("a.item");
+
   if (!a) return;
 
-  // detail.html로 가는 링크만 막기
-  if (a.getAttribute("href")?.startsWith("detail.html")) {
-    showComingSoon(e);
+  if (a.dataset.status !== "Released") {
+
+    e.preventDefault();
+
+    alert(
+      "서비스 준비중입니다.\n곧 찾아뵙겠습니다."
+    );
   }
+
 });
 
 
