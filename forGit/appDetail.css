@@ -654,8 +654,9 @@
         width: 100%;
     }
 
-    [hidden] {
-       display: none !important;
-    }
+}
 
+
+[hidden] {
+ display: none !important;
 }
