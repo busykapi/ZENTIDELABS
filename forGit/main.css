@@ -2920,6 +2920,8 @@ input, select, textarea {
 			background-color: #D7FF00 !important;
 			box-shadow: none;
 			color: #111111 !important;
+			border-color: #D7FF00 !important;
+			font-weight: 600 !important;
 		}
 
 			input[type="submit"].primary:hover,
