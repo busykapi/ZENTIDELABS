@@ -4765,7 +4765,7 @@ html, body { overflow-x: hidden; }
 
 #main.brand-page {
     position: relative;
-    background: #090d16;
+    background: #050810;
     overflow: hidden;
 }
 
@@ -4776,7 +4776,7 @@ html, body { overflow-x: hidden; }
 
     background-image: url("ZENTIDELABS_NO_BACKGROUND.png");
     background-repeat: no-repeat;
-    background-position: center 180px;
+    background-position: center center;
     background-size: min(75vw, 900px) auto;
 
     opacity: 0.3;
