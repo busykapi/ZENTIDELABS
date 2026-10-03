@@ -26,11 +26,11 @@
     ],
 
     "screens": [
-      "forGit/apps/sinkholesafe/01.webp",
-      "forGit/apps/sinkholesafe/02.webp",
-      "forGit/apps/sinkholesafe/03.webp",
-      "forGit/apps/sinkholesafe/04.webp",
-      "forGit/apps/sinkholesafe/05.webp"
+      "forGit/apps/sinkholesafe/SinkholeSafe_1.webp",
+      "forGit/apps/sinkholesafe/SinkholeSafe_2.webp",
+      "forGit/apps/sinkholesafe/SinkholeSafe_3.webp",
+      "forGit/apps/sinkholesafe/SinkholeSafe_4.webp",
+      "forGit/apps/sinkholesafe/SinkholeSafe_5.webp"
     ],
 
     "googlePlay": "https://play.google.com/store/apps/details?id=com.sinkholesafe.app",
