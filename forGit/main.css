@@ -4753,3 +4753,44 @@ html, body { overflow-x: hidden; }
         cursor: pointer;
     }
 }
+
+
+
+
+/* ==============================
+   ABOUT PAGE BACKGROUND
+   ============================== */
+
+#main.about-page {
+    position: relative;
+    background: #11131c;
+    overflow: hidden;
+}
+
+/* 회사 로고를 배경으로 */
+#main.about-page::before {
+    content: "";
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../ZTL_logo_blue.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: min(75vw, 900px) auto;
+
+    opacity: 0.08;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 실제 About 내용은 로고 위로 */
+#main.about-page > * {
+    position: relative;
+    z-index: 1;
+}
