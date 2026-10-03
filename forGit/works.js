@@ -136,7 +136,7 @@ function renderApps() {
   grid.innerHTML = pageApps.map(app => `
     <a class="item"
        href="${app.status === 'Released'
-         ? `app-detail.html?id=${encodeURIComponent(app.id)}`
+         ? `appDetail.html?id=${encodeURIComponent(app.id)}`
          : '#'}"
        data-status="${app.status || 'Preparing'}">
 
