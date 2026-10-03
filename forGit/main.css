@@ -4758,21 +4758,19 @@ html, body { overflow-x: hidden; }
 
 
 /* ==============================
-   ABOUT PAGE BACKGROUND
+   SUB PAGE BACKGROUND
+   About / Works / Contact 공통
    ============================== */
 
-/* ABOUT 전용 배경 */
-
-#main.about-page {
+#main.brand-page {
     position: relative;
     background: #0d0f17;
     overflow: hidden;
 }
 
-#main.about-page::before {
+#main.brand-page::before {
     content: "";
     position: fixed;
-
     inset: 0;
 
     background-image: url("../ZTL_logo_blue.png");
@@ -4786,11 +4784,38 @@ html, body { overflow-x: hidden; }
     z-index: 0;
 }
 
-/* header 건드리지 말고 본문만 */
-#main.about-page > .container {
+/* About / Contact */
+#main.brand-page > .container {
     position: relative;
     z-index: 1;
 }
+
+/* Works */
+#main.brand-page > .rsvContainer {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==============================
+   ABOUT PAGE - 배너 이미지만
+   ============================== */
+
+.about-brand-image {
+    width: 100%;
+    margin: 2.5em auto 3.5em auto;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.about-brand-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
 
 
 /* About - ZENTIDE LABS Brand Image */
