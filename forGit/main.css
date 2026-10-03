@@ -4764,7 +4764,7 @@ html, body { overflow-x: hidden; }
 
 #main.brand-page {
     position: relative;
-    background: #101522;
+    background: #080d18;
     overflow: hidden;
 }
 
@@ -4778,7 +4778,7 @@ html, body { overflow-x: hidden; }
     background-position: center 180px;
     background-size: min(75vw, 900px) auto;
 
-    opacity: 0.12;
+    opacity: 0.2;
 
     pointer-events: none;
     z-index: 0;
