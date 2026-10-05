@@ -4836,3 +4836,10 @@ html, body { overflow-x: hidden; }
 		margin-top: 0 !important;
 	}
 }
+
+
+/* 헤더 로고 + 메뉴 글씨 굵기 */
+#header #logo a,
+#header #nav > ul > li > a {
+    font-weight: 600 !important;
+}
