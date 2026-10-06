@@ -4894,3 +4894,14 @@ html, body { overflow-x: hidden; }
 .dropotron > li.active > span {
     color: #D7FF00 !important;
 }
+
+
+/* =========================================
+   MAIN PAGE HEADER HOVER
+========================================= */
+
+body.landing #header #logo a:hover,
+body.landing #header #nav > ul > li:hover > a,
+body.landing #header #nav > ul > li:hover > span {
+    color: #D7FF00 !important;
+}
