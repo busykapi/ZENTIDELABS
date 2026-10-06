@@ -4838,48 +4838,43 @@ html, body { overflow-x: hidden; }
 }
 
 
-/* 헤더 로고 + 메뉴 글씨 굵기 */
+
+/* =========================================
+   HEADER / NAV
+========================================= */
+
 #header #logo a,
-#header #nav > ul > li > a {
+#header #nav > ul > li > a,
+#header #nav > ul > li > span {
     font-weight: 600 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    transition: color 0.2s ease-in-out;
+}
+
+#header #nav > ul > li {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+#header #logo a:hover,
+#header #nav > ul > li:hover > a,
+#header #nav > ul > li:hover > span,
+#header #nav > ul > li.active > a,
+#header #nav > ul > li.active > span {
+    color: #D7FF00 !important;
 }
 
 
 /* =========================================
-   NAV - 글자만 노란색 / 배경 강조 제거 20261006
+   WORKS DROPDOWN
 ========================================= */
 
-/* Main / About / Works / Contact */
-#header nav > ul > li,
-#header nav > ul > li > a,
-#header nav > ul > li > span {
-    background: transparent !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-}
-
-/* 마우스 올렸을 때 */
-#header nav > ul > li:hover > a,
-#header nav > ul > li:hover > span {
-    color: #D7FF00 !important;
-    background: transparent !important;
-}
-
-/* 현재 페이지 */
-#header nav > ul > li.active > a,
-#header nav > ul > li.active > span {
-    color: #D7FF00 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-}
-
-
-/* Works 하위 App / Web */
 .dropotron {
     box-shadow: none !important;
 }
 
-/* 드롭다운 각각의 항목 */
 .dropotron > li,
 .dropotron > li > a,
 .dropotron > li > span {
@@ -4887,16 +4882,15 @@ html, body { overflow-x: hidden; }
     box-shadow: none !important;
 }
 
-/* App / Web hover */
-.dropotron > li:hover > a,
-.dropotron > li:hover > span {
-    color: #D7FF00 !important;
-    background: transparent !important;
+.dropotron > li > a,
+.dropotron > li > span {
+    font-weight: 600 !important;
+    transition: color 0.2s ease-in-out;
 }
 
-/* App / Web 현재 선택 */
+.dropotron > li:hover > a,
+.dropotron > li:hover > span,
 .dropotron > li.active > a,
 .dropotron > li.active > span {
     color: #D7FF00 !important;
-    background: transparent !important;
 }
